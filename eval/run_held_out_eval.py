@@ -1,7 +1,18 @@
-﻿"""
+"""
 Final Phase 6 Evaluation Script.
 Runs Strategy A, B, and C on the held_out split exactly once.
 Generates eval/report.md containing metrics and the exception list.
+
+DATA INTEGRITY GUARANTEE:
+  - Uses sqlite:///:memory: — a FRESH in-memory DB every run, so there can be
+    NO stale Decision/Outcome rows from any prior execution.
+  - After all strategies run, sanity_check_no_duplicate_decisions() asserts
+    that every (event_id, strategy) pair has exactly ONE Decision row.
+    If duplicates are found (e.g. due to a future switch to a file DB) the
+    script aborts with exit code 2 before writing the report.
+  - The module-level _DATASET_CACHE in generate_synthetic_data.py is explicitly
+    cleared at startup to prevent any cross-run cache bleed if this module is
+    imported more than once in the same process.
 """
 
 import json
@@ -137,9 +148,9 @@ def generate_report_md(res_a, res_b, res_c, exceptions_a, exceptions_b, exceptio
         f.write(f"| Total events | {res_a['total_events']} | {res_b['total_events']} | {res_c['total_events']} |\n")
         f.write(f"| Recovered count | {res_a['recovered_count']} | {res_b['recovered_count']} | {res_c['recovered_count']} |\n")
         f.write(f"| Recovery rate (%) | {res_a['recovery_rate']:.2f}% | {res_b['recovery_rate']:.2f}% | {res_c['recovery_rate']:.2f}% |\n")
-        f.write(f"| Total INR recovered | ₹{res_a['total_amount_recovered']:,.2f} | ₹{res_b['total_amount_recovered']:,.2f} | ₹{res_c['total_amount_recovered']:,.2f} |\n")
+        f.write(f"| Total INR recovered | Rs.{res_a['total_amount_recovered']:,.2f} | Rs.{res_b['total_amount_recovered']:,.2f} | Rs.{res_c['total_amount_recovered']:,.2f} |\n")
         f.write(f"| Total attempts | {res_a['total_attempts']} | {res_b['total_attempts']} | {res_c['total_attempts']} |\n")
-        f.write(f"| INR per intervention | ₹{res_a['recovery_per_intervention']:,.2f} | ₹{res_b['recovery_per_intervention']:,.2f} | ₹{res_c['recovery_per_intervention']:,.2f} |\n\n")
+        f.write(f"| INR per intervention | Rs.{res_a['recovery_per_intervention']:,.2f} | Rs.{res_b['recovery_per_intervention']:,.2f} | Rs.{res_c['recovery_per_intervention']:,.2f} |\n\n")
         
         total_c = res_c["llm_decisions"] + res_c["fallback_decisions"]
         if total_c > 0:
@@ -163,7 +174,7 @@ def generate_report_md(res_a, res_b, res_c, exceptions_a, exceptions_b, exceptio
             f.write("| Payment ID | Amount | Root Cause Bucket | Reason Category | Error Code | Raw Error |\n")
             f.write("|---|---|---|---|---|---|\n")
             for ex in exceptions:
-                f.write(f"| `{ex['payment_id']}` | ₹{ex['amount']:.2f} | `{ex['bucket']}` | {ex['reason_category']} | `{ex['error_code']}` | {ex['error_raw'][:40]}... |\n")
+                f.write(f"| `{ex['payment_id']}` | Rs.{ex['amount']:.2f} | `{ex['bucket']}` | {ex['reason_category']} | `{ex['error_code']}` | {ex['error_raw'][:40]}... |\n")
             f.write("\n")
             
         write_exception_table(exceptions_a, "Strategy A")
@@ -175,9 +186,57 @@ def generate_report_md(res_a, res_b, res_c, exceptions_a, exceptions_b, exceptio
     print(f"Report successfully written to {report_path}")
 
 
+def sanity_check_no_duplicate_decisions(db, events, strategies=("A", "B", "C")):
+    """
+    SANITY ASSERTION: verify that each (event_id, strategy) pair has exactly ONE
+    Decision row after the run. If duplicates exist, the run is corrupt and we
+    abort before writing the report.
+
+    This guard exists to catch any future scenario where the eval is switched
+    from an in-memory DB to a file-backed DB and rows from a previous run are
+    not cleared before re-execution.
+    """
+    print("--- Sanity Assertion: Decision row counts per (event_id, strategy) ---")
+    violations = []
+    for strategy in strategies:
+        for event in events:
+            count = db.query(Decision).filter_by(event_id=event.id, strategy=strategy).count()
+            if count != 1:
+                violations.append((event.razorpay_payment_id, strategy, count))
+                print(f"  [FAIL] pid={event.razorpay_payment_id} | strategy={strategy} | rows={count}")
+
+    total_checked = len(events) * len(strategies)
+    if violations:
+        print(f"\n[ABORT] {len(violations)}/{total_checked} pairs have duplicate/missing Decision rows.")
+        print("        This indicates stale data from a prior run — fix the harness before")
+        print("        re-running so the report is not computed over mixed old+new decisions.")
+        sys.exit(2)
+    else:
+        print(f"  [PASS] All {total_checked} (event_id, strategy) pairs have exactly 1 Decision row.")
+        print("         No stale or duplicate data detected. Report is clean.\n")
+
+
 def main():
+    # Force UTF-8 output so currency symbols render on Windows terminals
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
+
+    print("=" * 70)
+    print("Reclaim -- Phase 6 Held-Out Evaluation")
+    print("DB: sqlite:///:memory: (fresh in-memory instance per run)")
+    print("    => Zero stale rows possible by construction.")
+    print("=" * 70)
+    print()
+
     print("Initialising fresh in-memory database...")
     db = make_session()
+
+    # Clear module-level dataset cache in case this script is imported or re-run
+    # in the same process (e.g. during test harness execution). This prevents any
+    # cross-run contamination via the _DATASET_CACHE global in generate_synthetic_data.py.
+    import data.generate_synthetic_data as gsd
+    gsd._DATASET_CACHE.clear()
+    print("  Module-level _DATASET_CACHE cleared (prevents in-process cache bleed).")
 
     print("Loading held_out split events...")
     events = load_held_out_events(db)
@@ -196,19 +255,57 @@ def main():
     print("\nRunning Strategy C (LLM + Policy Engine)...")
     res_c = run_strategy_c(events, db)
     
-    # We will also print out the source log
+    # Per-event provider/source log for Strategy C
     print("\n--- Strategy C Per-Event Provider/Source Log ---")
-    decisions = db.query(Decision).filter_by(strategy="C").all()
-    for d in decisions:
+    decisions_c = db.query(Decision).filter_by(strategy="C").all()
+    llm_count_log = 0
+    fallback_count_log = 0
+    for d in decisions_c:
         src = d.reasoning.split("]:")[0].strip("[")
-        print(f"Event ID {d.event_id}: Served by {src}")
-    print("------------------------------------------------")
-    
+        is_llm = src == "LLM"
+        tag = "LLM     " if is_llm else "FALLBACK"
+        print(f"  [{tag}] event_id={d.event_id} | action={d.recommended_action}")
+        if is_llm:
+            llm_count_log += 1
+        else:
+            fallback_count_log += 1
+    print(f"  Summary: {llm_count_log} LLM decisions, {fallback_count_log} fallback decisions")
+    print("------------------------------------------------\n")
+
+    # === SANITY ASSERTION: exactly 1 Decision row per (event, strategy) ===
+    # This assertion will abort with exit code 2 if duplicates exist,
+    # preventing a corrupt report from being written.
+    sanity_check_no_duplicate_decisions(db, events, strategies=("A", "B", "C"))
+
     exc_a = get_exceptions(db, "A")
     exc_b = get_exceptions(db, "B")
     exc_c = get_exceptions(db, "C")
 
     generate_report_md(res_a, res_b, res_c, exc_a, exc_b, exc_c, db)
+
+    # Persist Strategy C decision reasoning to disk so it survives the in-memory DB teardown.
+    # Keyed by razorpay_payment_id for easy lookup.
+    decisions_dump = []
+    for d in db.query(Decision).filter_by(strategy="C").all():
+        event = db.query(PaymentEvent).filter_by(id=d.event_id).first()
+        src_tag = d.reasoning.split("]:")[0].strip("[")
+        reasoning_body = d.reasoning.split("]:", 1)[1].strip() if "]:" in d.reasoning else d.reasoning
+        decisions_dump.append({
+            "event_id": d.event_id,
+            "razorpay_payment_id": event.razorpay_payment_id if event else None,
+            "bucket": next(
+                (o["bucket"] for o in res_c["outcomes"] if o["event_id"] == d.event_id), "unknown"
+            ),
+            "source": src_tag,
+            "action": d.recommended_action,
+            "full_reasoning": reasoning_body,
+        })
+
+    dump_path = Path(__file__).parent / "strategy_c_decisions.json"
+    with open(dump_path, "w", encoding="utf-8") as f:
+        json.dump(decisions_dump, f, indent=2, ensure_ascii=False)
+    print(f"Strategy C decision reasoning written to {dump_path}")
+
     db.close()
     print("\nEvaluation complete.")
 

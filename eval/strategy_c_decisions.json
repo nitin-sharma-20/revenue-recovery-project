@@ -1,0 +1,122 @@
+[
+  {
+    "event_id": 1,
+    "razorpay_payment_id": "pay_synth_0097_6e39c0",
+    "bucket": "network_error",
+    "source": "LLM",
+    "action": "retry_now",
+    "full_reasoning": "The decline is classified as a network_error with a gateway timeout, indicating a transient connectivity issue rather than a problem with the card or fraud. No prior retry attempts have been made, and the failure is not due to insufficient funds or an invalid instrument. Therefore it is safe to attempt the payment again immediately."
+  },
+  {
+    "event_id": 2,
+    "razorpay_payment_id": "pay_synth_0034_64d756",
+    "bucket": "soft_decline",
+    "source": "LLM",
+    "action": "retry_later",
+    "full_reasoning": "The decline is classified as a soft decline (BAD_REQUEST_PAYMENT_DECLINED_BY_BANK), indicating a temporary issue such as insufficient funds, risk checks, or a temporary block by the issuing bank. No prior retries have been attempted, but the failure occurred over 140 hours ago, suggesting the customer may need time to address the underlying issue (e.g., fund replenishment or contacting their bank). A delayed retry with a back‑off window gives the customer an opportunity to resolve the problem while still attempting recovery, which aligns with best practices for soft declines."
+  },
+  {
+    "event_id": 3,
+    "razorpay_payment_id": "pay_synth_0087_18e64e",
+    "bucket": "insufficient_funds",
+    "source": "LLM",
+    "action": "retry_later",
+    "full_reasoning": "The decline is due to insufficient funds in the customer's account. Since the failure occurred over 10 days ago and there have been no prior retries, the customer likely needs time to add money before the payment can succeed. An immediate retry would likely fail again, so scheduling a retry after a reasonable back‑off period gives the user a chance to replenish the balance and improves the likelihood of a successful capture."
+  },
+  {
+    "event_id": 4,
+    "razorpay_payment_id": "pay_synth_0010_275952",
+    "bucket": "soft_decline",
+    "source": "LLM",
+    "action": "retry_later",
+    "full_reasoning": "The decline is classified as a soft decline (BAD_REQUEST_PAYMENT_DECLINED_BY_BANK), which typically indicates a temporary issue on the issuer side such as insufficient funds, a hold, or a transient risk flag. No prior attempts have been made, and the failure occurred about 6 days ago, suggesting the customer may have had time to resolve the underlying issue. A delayed retry (with a back‑off window) gives the issuer a chance to clear the decline while avoiding immediate repeated attempts that could further frustrate the customer."
+  },
+  {
+    "event_id": 5,
+    "razorpay_payment_id": "pay_synth_0135_62c8b8",
+    "bucket": "risky",
+    "source": "LLM",
+    "action": "escalate_human",
+    "full_reasoning": "The failure is classified as 'risky' with a BAD_REQUEST_PAYMENT_POSSIBLE_FRAUD code, indicating a high fraud risk due to rapid attempts from a foreign IP. This scenario requires manual investigation to verify the legitimacy of the transaction and to decide on any further steps, rather than automated retries or method changes."
+  },
+  {
+    "event_id": 6,
+    "razorpay_payment_id": "pay_synth_0139_8958ab",
+    "bucket": "risky",
+    "source": "LLM",
+    "action": "escalate_human",
+    "full_reasoning": "The failure is classified as 'risky' with a BAD_REQUEST_PAYMENT_POSSIBLE_FRAUD error, indicating a high fraud risk due to rapid attempts from a foreign IP. Automated retries or method changes could exacerbate potential fraud or violate compliance. The appropriate response is to flag the transaction for manual review by a fraud analyst or customer support to verify legitimacy before any further action."
+  },
+  {
+    "event_id": 7,
+    "razorpay_payment_id": "pay_synth_0130_423a63",
+    "bucket": "risky",
+    "source": "LLM",
+    "action": "escalate_human",
+    "full_reasoning": "The payment was declined by Razorpay's Thirdwatch risk engine (BAD_REQUEST_PAYMENT_RISK_CHECK_FAILED), indicating a potential fraud or high-risk transaction. Automated retries or method switches could violate compliance and increase chargeback risk. Since the failure is risk‑related and has persisted for over 9 days without any prior attempts, the safest approach is to flag the case for manual review by a fraud analyst or customer support team."
+  },
+  {
+    "event_id": 8,
+    "razorpay_payment_id": "pay_synth_0026_bdbcc5",
+    "bucket": "soft_decline",
+    "source": "LLM",
+    "action": "retry_later",
+    "full_reasoning": "The decline is classified as a soft decline caused by a 3D‑Secure authentication failure (BAD_REQUEST_PAYMENT_AUTH_FAILED). Soft declines are typically temporary and can be resolved when the customer successfully completes the authentication step. Since no prior attempts have been made and the failure is not due to a hard error (e.g., invalid card), the safest approach is to schedule a retry after a short back‑off period, giving the customer time to re‑authenticate or resolve any network issues that caused the timeout."
+  },
+  {
+    "event_id": 9,
+    "razorpay_payment_id": "pay_synth_0076_8f78db",
+    "bucket": "insufficient_funds",
+    "source": "LLM",
+    "action": "retry_later",
+    "full_reasoning": "The decline is due to insufficient funds (BAD_REQUEST_PAYMENT_ACCOUNT_INSUFFICIENT_BALANCE). Since the failure occurred over 9 days ago and no retry attempts have been made, the customer likely needs time to add money to their account. Scheduling a retry after a reasonable delay (e.g., 24‑48 hours) gives the customer an opportunity to replenish the balance while still attempting recovery before the payment window expires."
+  },
+  {
+    "event_id": 10,
+    "razorpay_payment_id": "pay_synth_0020_63fb7c",
+    "bucket": "soft_decline",
+    "source": "LLM",
+    "action": "retry_now",
+    "full_reasoning": "The failure is classified as a soft decline (GATEWAY_ERROR_DEBIT_FAILED), indicating a temporary issue at the acquiring bank such as insufficient funds or a transient processing error. No prior retry attempts have been made, and the failure occurred over 5 days ago, giving the account holder ample time to resolve any balance or banking issues. A safe immediate retry is appropriate to capture the payment now."
+  },
+  {
+    "event_id": 11,
+    "razorpay_payment_id": "pay_synth_0040_b83436",
+    "bucket": "soft_decline",
+    "source": "LLM",
+    "action": "retry_later",
+    "full_reasoning": "The decline is classified as a soft decline (issuer returned a Do Not Honor / status code 05), which typically indicates a temporary issue such as insufficient funds, a temporary block, or a network glitch. Since no retry attempts have been made yet and the failure occurred over 5 days ago, an immediate retry is less likely to succeed. Scheduling a retry after a reasonable backoff period gives the cardholder time to resolve any underlying issue (e.g., fund availability) while still attempting recovery."
+  },
+  {
+    "event_id": 12,
+    "razorpay_payment_id": "pay_synth_0036_42a715",
+    "bucket": "soft_decline",
+    "source": "LLM",
+    "action": "retry_later",
+    "full_reasoning": "The decline is classified as a soft decline (issuer returned a 'Do Not Honor' 05 response), which typically indicates a temporary issue such as insufficient funds, risk checks, or a temporary block on the card. Soft declines are recoverable by retrying after a delay, allowing the issuer to potentially resolve the condition. Given that no prior retries have been attempted and the failure occurred over 10 days ago, scheduling a retry with a back‑off window (e.g., 24‑48 hours) is the most appropriate next step."
+  },
+  {
+    "event_id": 13,
+    "razorpay_payment_id": "pay_synth_0058_ce6fc9",
+    "bucket": "insufficient_funds",
+    "source": "LLM",
+    "action": "retry_later",
+    "full_reasoning": "The decline is due to insufficient funds, which can be resolved if the customer adds money to their account. Since the failure occurred over 10 days ago and no retry attempts have been made, the optimal approach is to schedule a retry after a reasonable delay, allowing the customer time to replenish the balance. An immediate retry would likely fail again, while a delayed retry maximizes the chance of successful payment without unnecessary friction."
+  },
+  {
+    "event_id": 14,
+    "razorpay_payment_id": "pay_synth_0050_737dba",
+    "bucket": "insufficient_funds",
+    "source": "LLM",
+    "action": "retry_later",
+    "full_reasoning": "The decline is due to insufficient funds (GATEWAY_ERROR_INSUFFICIENT_FUNDS). Since the failure occurred over 9 days ago and no retry attempts have been made, the customer likely needs time to add money to the account. A delayed retry (e.g., after a day or two) gives the user an opportunity to replenish the balance without immediate repeated declines."
+  },
+  {
+    "event_id": 15,
+    "razorpay_payment_id": "pay_synth_0125_c26c72",
+    "bucket": "hard_decline",
+    "source": "LLM",
+    "action": "switch_method",
+    "full_reasoning": "The decline is classified as a hard decline due to the error BAD_REQUEST_PAYMENT_CARD_EXPIRED, indicating the card's expiry date is in the past. This is not a transient issue and cannot be resolved by retrying. The appropriate recovery step is to prompt the customer to provide a different, valid payment instrument (e.g., an updated card or alternative payment method)."
+  }
+]
