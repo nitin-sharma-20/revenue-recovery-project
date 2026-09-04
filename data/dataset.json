@@ -1,0 +1,6302 @@
+[
+  {
+    "id": 144,
+    "razorpay_payment_id": "pay_synth_0144_f3b564",
+    "amount": 722.5,
+    "currency": "INR",
+    "failure_reason_raw": "Gateway returned undocumented status code X3 for auth request.",
+    "failure_reason_code": "GATEWAY_UNDOCUMENTED_STATUS_X3",
+    "customer_id": "cust_synth_767",
+    "order_id": "order_synth_0144_29b66c",
+    "created_at": "2026-08-30T21:54:00+00:00",
+    "expected_root_cause": "unknown",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 23,
+    "razorpay_payment_id": "pay_synth_0023_34c68b",
+    "amount": 988.72,
+    "currency": "INR",
+    "failure_reason_raw": "Transaction not permitted to cardholder by issuer.",
+    "failure_reason_code": "GATEWAY_ERROR_TRANSACTION_NOT_PERMITTED",
+    "customer_id": "cust_synth_268",
+    "order_id": "order_synth_0023_e532b3",
+    "created_at": "2026-08-24T21:42:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 988.72,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 95,
+    "razorpay_payment_id": "pay_synth_0095_0f7970",
+    "amount": 983.56,
+    "currency": "INR",
+    "failure_reason_raw": "Issuing bank switch is currently unavailable/down.",
+    "failure_reason_code": "GATEWAY_ERROR_ISSUER_UNAVAILABLE",
+    "customer_id": "cust_synth_816",
+    "order_id": "order_synth_0095_f8edb4",
+    "created_at": "2026-08-26T14:11:00+00:00",
+    "expected_root_cause": "network_error",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 983.56,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 983.56,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 82,
+    "razorpay_payment_id": "pay_synth_0082_61c463",
+    "amount": 14228.96,
+    "currency": "INR",
+    "failure_reason_raw": "Payment failed due to insufficient funds in customer account.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_ACCOUNT_INSUFFICIENT_BALANCE",
+    "customer_id": "cust_synth_961",
+    "order_id": "order_synth_0082_50db71",
+    "created_at": "2026-08-29T20:01:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "high",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 14228.96,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 80,
+    "razorpay_payment_id": "pay_synth_0080_5600cf",
+    "amount": 3501.01,
+    "currency": "INR",
+    "failure_reason_raw": "Payment failed due to insufficient funds in customer account.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_ACCOUNT_INSUFFICIENT_BALANCE",
+    "customer_id": "cust_synth_737",
+    "order_id": "order_synth_0080_7372ac",
+    "created_at": "2026-08-27T07:01:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 3501.01,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 3501.01,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 89,
+    "razorpay_payment_id": "pay_synth_0089_8b522c",
+    "amount": 22186.84,
+    "currency": "INR",
+    "failure_reason_raw": "Declined: not enough balance in account.",
+    "failure_reason_code": "GATEWAY_ERROR_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_436",
+    "order_id": "order_synth_0089_a4011e",
+    "created_at": "2026-08-25T13:04:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "high",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 22186.84,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 22186.84,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 13,
+    "razorpay_payment_id": "pay_synth_0013_c1bff4",
+    "amount": 560.74,
+    "currency": "INR",
+    "failure_reason_raw": "Issuer returned do not honor status code 05.",
+    "failure_reason_code": "GATEWAY_ERROR_DO_NOT_HONOR",
+    "customer_id": "cust_synth_723",
+    "order_id": "order_synth_0013_19d352",
+    "created_at": "2026-08-24T19:02:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 109,
+    "razorpay_payment_id": "pay_synth_0109_37bfc2",
+    "amount": 549.77,
+    "currency": "INR",
+    "failure_reason_raw": "Payment processing session timed out during authorization.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_TIMED_OUT",
+    "customer_id": "cust_synth_126",
+    "order_id": "order_synth_0109_2d6b98",
+    "created_at": "2026-08-31T06:44:00+00:00",
+    "expected_root_cause": "network_error",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 41,
+    "razorpay_payment_id": "pay_synth_0041_043b67",
+    "amount": 3666.9,
+    "currency": "INR",
+    "failure_reason_raw": "Transaction not permitted to cardholder by issuer.",
+    "failure_reason_code": "GATEWAY_ERROR_TRANSACTION_NOT_PERMITTED",
+    "customer_id": "cust_synth_407",
+    "order_id": "order_synth_0041_016f97",
+    "created_at": "2026-08-28T18:52:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 3666.9,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 3666.9,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 117,
+    "razorpay_payment_id": "pay_synth_0117_6e481f",
+    "amount": 816.16,
+    "currency": "INR",
+    "failure_reason_raw": "The card number provided is invalid or inactive.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_CARD_INVALID",
+    "customer_id": "cust_synth_542",
+    "order_id": "order_synth_0117_f96b80",
+    "created_at": "2026-08-26T18:25:00+00:00",
+    "expected_root_cause": "hard_decline",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 32,
+    "razorpay_payment_id": "pay_synth_0032_34192e",
+    "amount": 2047.56,
+    "currency": "INR",
+    "failure_reason_raw": "Direct debit attempt failed at acquiring bank.",
+    "failure_reason_code": "GATEWAY_ERROR_DEBIT_FAILED",
+    "customer_id": "cust_synth_233",
+    "order_id": "order_synth_0032_86e7b0",
+    "created_at": "2026-08-27T19:00:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 73,
+    "razorpay_payment_id": "pay_synth_0073_6c9653",
+    "amount": 680.19,
+    "currency": "INR",
+    "failure_reason_raw": "Customer account does not have sufficient balance for this charge.",
+    "failure_reason_code": "BAD_REQUEST_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_302",
+    "order_id": "order_synth_0073_7d00aa",
+    "created_at": "2026-08-29T07:56:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 5,
+    "razorpay_payment_id": "pay_synth_0005_3d00e7",
+    "amount": 1183.25,
+    "currency": "INR",
+    "failure_reason_raw": "Issuer returned do not honor status code 05.",
+    "failure_reason_code": "GATEWAY_ERROR_DO_NOT_HONOR",
+    "customer_id": "cust_synth_296",
+    "order_id": "order_synth_0005_10f9eb",
+    "created_at": "2026-08-31T04:05:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 105,
+    "razorpay_payment_id": "pay_synth_0105_db9426",
+    "amount": 10594.8,
+    "currency": "INR",
+    "failure_reason_raw": "Underlying network transport error while communicating with gateway.",
+    "failure_reason_code": "GATEWAY_ERROR_NETWORK_FAILURE",
+    "customer_id": "cust_synth_517",
+    "order_id": "order_synth_0105_4d0594",
+    "created_at": "2026-08-28T04:06:00+00:00",
+    "expected_root_cause": "network_error",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "high",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 10594.8,
+        "attempts_used": 1
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 10594.8,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 75,
+    "razorpay_payment_id": "pay_synth_0075_dd4ded",
+    "amount": 717.63,
+    "currency": "INR",
+    "failure_reason_raw": "Declined: not enough balance in account.",
+    "failure_reason_code": "GATEWAY_ERROR_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_605",
+    "order_id": "order_synth_0075_dbcc8e",
+    "created_at": "2026-08-27T03:59:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 27,
+    "razorpay_payment_id": "pay_synth_0027_e13b46",
+    "amount": 3090.61,
+    "currency": "INR",
+    "failure_reason_raw": "Transaction not permitted to cardholder by issuer.",
+    "failure_reason_code": "GATEWAY_ERROR_TRANSACTION_NOT_PERMITTED",
+    "customer_id": "cust_synth_773",
+    "order_id": "order_synth_0027_f407d2",
+    "created_at": "2026-08-26T01:45:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 3090.61,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 3090.61,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 3090.61,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 39,
+    "razorpay_payment_id": "pay_synth_0039_9766c6",
+    "amount": 2382.4,
+    "currency": "INR",
+    "failure_reason_raw": "Transaction not permitted to cardholder by issuer.",
+    "failure_reason_code": "GATEWAY_ERROR_TRANSACTION_NOT_PERMITTED",
+    "customer_id": "cust_synth_211",
+    "order_id": "order_synth_0039_bc0ea0",
+    "created_at": "2026-08-27T08:36:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 2382.4,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 2382.4,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 2382.4,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 55,
+    "razorpay_payment_id": "pay_synth_0055_784c4d",
+    "amount": 347.03,
+    "currency": "INR",
+    "failure_reason_raw": "Generic gateway response: customer account does not have sufficient balance for this charge.",
+    "failure_reason_code": "GATEWAY_ERROR",
+    "customer_id": "cust_synth_458",
+    "order_id": "order_synth_0055_65b4af",
+    "created_at": "2026-08-31T04:48:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 347.03,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 347.03,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 126,
+    "razorpay_payment_id": "pay_synth_0126_316b42",
+    "amount": 356.11,
+    "currency": "INR",
+    "failure_reason_raw": "Card is restricted or permanently blocked by issuer.",
+    "failure_reason_code": "GATEWAY_ERROR_CARD_RESTRICTED",
+    "customer_id": "cust_synth_732",
+    "order_id": "order_synth_0126_77f160",
+    "created_at": "2026-08-27T16:32:00+00:00",
+    "expected_root_cause": "hard_decline",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 84,
+    "razorpay_payment_id": "pay_synth_0084_367568",
+    "amount": 850.4,
+    "currency": "INR",
+    "failure_reason_raw": "Declined: not enough balance in account.",
+    "failure_reason_code": "GATEWAY_ERROR_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_524",
+    "order_id": "order_synth_0084_a387d2",
+    "created_at": "2026-08-28T12:41:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 850.4,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 44,
+    "razorpay_payment_id": "pay_synth_0044_339203",
+    "amount": 863.59,
+    "currency": "INR",
+    "failure_reason_raw": "Generic gateway response: issuer returned do not honor status code 05.",
+    "failure_reason_code": "GATEWAY_ERROR",
+    "customer_id": "cust_synth_788",
+    "order_id": "order_synth_0044_e8379b",
+    "created_at": "2026-08-29T20:21:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 863.59,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 863.59,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 863.59,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 64,
+    "razorpay_payment_id": "pay_synth_0064_fabb8d",
+    "amount": 783.25,
+    "currency": "INR",
+    "failure_reason_raw": "Declined: not enough balance in account.",
+    "failure_reason_code": "GATEWAY_ERROR_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_401",
+    "order_id": "order_synth_0064_72866a",
+    "created_at": "2026-08-28T20:25:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 783.25,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 783.25,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 111,
+    "razorpay_payment_id": "pay_synth_0111_d0ea93",
+    "amount": 847.26,
+    "currency": "INR",
+    "failure_reason_raw": "Underlying network transport error while communicating with gateway.",
+    "failure_reason_code": "GATEWAY_ERROR_NETWORK_FAILURE",
+    "customer_id": "cust_synth_729",
+    "order_id": "order_synth_0111_c4ac14",
+    "created_at": "2026-08-31T10:30:00+00:00",
+    "expected_root_cause": "network_error",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 847.26,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 847.26,
+        "attempts_used": 1
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 847.26,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 145,
+    "razorpay_payment_id": "pay_synth_0145_e94309",
+    "amount": 799.02,
+    "currency": "INR",
+    "failure_reason_raw": "Gateway returned undocumented status code X3 for auth request.",
+    "failure_reason_code": "GATEWAY_UNDOCUMENTED_STATUS_X3",
+    "customer_id": "cust_synth_957",
+    "order_id": "order_synth_0145_5717e3",
+    "created_at": "2026-08-31T04:15:00+00:00",
+    "expected_root_cause": "unknown",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 59,
+    "razorpay_payment_id": "pay_synth_0059_d78926",
+    "amount": 558.4,
+    "currency": "INR",
+    "failure_reason_raw": "Customer account does not have sufficient balance for this charge.",
+    "failure_reason_code": "BAD_REQUEST_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_645",
+    "order_id": "order_synth_0059_a679d0",
+    "created_at": "2026-08-30T22:08:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 558.4,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 38,
+    "razorpay_payment_id": "pay_synth_0038_c6b21f",
+    "amount": 3717.39,
+    "currency": "INR",
+    "failure_reason_raw": "Customer 3D-Secure authentication failed or timed out.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_AUTH_FAILED",
+    "customer_id": "cust_synth_756",
+    "order_id": "order_synth_0038_f6386a",
+    "created_at": "2026-08-31T08:04:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 3717.39,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 3717.39,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 133,
+    "razorpay_payment_id": "pay_synth_0133_1dce76",
+    "amount": 379.62,
+    "currency": "INR",
+    "failure_reason_raw": "Transaction flagged by Razorpay Thirdwatch risk engine.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_RISK_CHECK_FAILED",
+    "customer_id": "cust_synth_755",
+    "order_id": "order_synth_0133_cfbc81",
+    "created_at": "2026-08-29T16:31:00+00:00",
+    "expected_root_cause": "risky",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 132,
+    "razorpay_payment_id": "pay_synth_0132_583a93",
+    "amount": 353.5,
+    "currency": "INR",
+    "failure_reason_raw": "High risk score detected: rapid successive attempts from foreign IP.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_POSSIBLE_FRAUD",
+    "customer_id": "cust_synth_119",
+    "order_id": "order_synth_0132_87a38b",
+    "created_at": "2026-08-26T23:15:00+00:00",
+    "expected_root_cause": "risky",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 110,
+    "razorpay_payment_id": "pay_synth_0110_18c409",
+    "amount": 378.55,
+    "currency": "INR",
+    "failure_reason_raw": "Connection to bank gateway timed out after 30000ms.",
+    "failure_reason_code": "GATEWAY_ERROR_PAYMENT_TIMED_OUT",
+    "customer_id": "cust_synth_859",
+    "order_id": "order_synth_0110_e86037",
+    "created_at": "2026-08-25T00:28:00+00:00",
+    "expected_root_cause": "network_error",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 378.55,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 378.55,
+        "attempts_used": 1
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 378.55,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 90,
+    "razorpay_payment_id": "pay_synth_0090_374749",
+    "amount": 2149.23,
+    "currency": "INR",
+    "failure_reason_raw": "Payment failed due to insufficient funds in customer account.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_ACCOUNT_INSUFFICIENT_BALANCE",
+    "customer_id": "cust_synth_746",
+    "order_id": "order_synth_0090_b4f9a1",
+    "created_at": "2026-08-28T08:12:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 2149.23,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 2149.23,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 92,
+    "razorpay_payment_id": "pay_synth_0092_493ae2",
+    "amount": 2529.79,
+    "currency": "INR",
+    "failure_reason_raw": "Payment processing session timed out during authorization.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_TIMED_OUT",
+    "customer_id": "cust_synth_180",
+    "order_id": "order_synth_0092_6dc949",
+    "created_at": "2026-08-27T07:46:00+00:00",
+    "expected_root_cause": "network_error",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 2529.79,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 2529.79,
+        "attempts_used": 1
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 2529.79,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 112,
+    "razorpay_payment_id": "pay_synth_0112_89da98",
+    "amount": 6469.81,
+    "currency": "INR",
+    "failure_reason_raw": "Connection to bank gateway timed out after 30000ms.",
+    "failure_reason_code": "GATEWAY_ERROR_PAYMENT_TIMED_OUT",
+    "customer_id": "cust_synth_829",
+    "order_id": "order_synth_0112_e05542",
+    "created_at": "2026-08-30T09:52:00+00:00",
+    "expected_root_cause": "network_error",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "high",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 6469.81,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 6469.81,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 8,
+    "razorpay_payment_id": "pay_synth_0008_6538eb",
+    "amount": 519.82,
+    "currency": "INR",
+    "failure_reason_raw": "Generic gateway response: transaction not permitted to cardholder by issuer.",
+    "failure_reason_code": "GATEWAY_ERROR",
+    "customer_id": "cust_synth_941",
+    "order_id": "order_synth_0008_1ede26",
+    "created_at": "2026-08-26T13:40:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 519.82,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 28,
+    "razorpay_payment_id": "pay_synth_0028_99a3d8",
+    "amount": 5186.31,
+    "currency": "INR",
+    "failure_reason_raw": "Customer 3D-Secure authentication failed or timed out.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_AUTH_FAILED",
+    "customer_id": "cust_synth_869",
+    "order_id": "order_synth_0028_d8bf0b",
+    "created_at": "2026-08-31T09:26:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "high",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 137,
+    "razorpay_payment_id": "pay_synth_0137_f9bd59",
+    "amount": 17908.86,
+    "currency": "INR",
+    "failure_reason_raw": "Transaction flagged by Razorpay Thirdwatch risk engine.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_RISK_CHECK_FAILED",
+    "customer_id": "cust_synth_844",
+    "order_id": "order_synth_0137_43ddcf",
+    "created_at": "2026-08-30T03:48:00+00:00",
+    "expected_root_cause": "risky",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "high",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 147,
+    "razorpay_payment_id": "pay_synth_0147_df6710",
+    "amount": 4156.12,
+    "currency": "INR",
+    "failure_reason_raw": "Card BIN range not configured in current scheme routing table.",
+    "failure_reason_code": "SCHEME_CONFIG_MISMATCH_BIN",
+    "customer_id": "cust_synth_795",
+    "order_id": "order_synth_0147_9bfdd6",
+    "created_at": "2026-08-29T08:25:00+00:00",
+    "expected_root_cause": "unknown",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 52,
+    "razorpay_payment_id": "pay_synth_0052_7d3635",
+    "amount": 767.21,
+    "currency": "INR",
+    "failure_reason_raw": "Declined: not enough balance in account.",
+    "failure_reason_code": "GATEWAY_ERROR_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_129",
+    "order_id": "order_synth_0052_be3b93",
+    "created_at": "2026-08-24T21:02:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 86,
+    "razorpay_payment_id": "pay_synth_0086_aa57ff",
+    "amount": 13215.5,
+    "currency": "INR",
+    "failure_reason_raw": "Declined: not enough balance in account.",
+    "failure_reason_code": "GATEWAY_ERROR_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_339",
+    "order_id": "order_synth_0086_f72202",
+    "created_at": "2026-08-25T23:36:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "high",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 13215.5,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 13215.5,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 17,
+    "razorpay_payment_id": "pay_synth_0017_595f61",
+    "amount": 17997.56,
+    "currency": "INR",
+    "failure_reason_raw": "Direct debit attempt failed at acquiring bank.",
+    "failure_reason_code": "GATEWAY_ERROR_DEBIT_FAILED",
+    "customer_id": "cust_synth_508",
+    "order_id": "order_synth_0017_0ff0e7",
+    "created_at": "2026-08-28T08:45:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "high",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 17997.56,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 17997.56,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 131,
+    "razorpay_payment_id": "pay_synth_0131_ff806a",
+    "amount": 4223.99,
+    "currency": "INR",
+    "failure_reason_raw": "Transaction flagged by Razorpay Thirdwatch risk engine.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_RISK_CHECK_FAILED",
+    "customer_id": "cust_synth_672",
+    "order_id": "order_synth_0131_eb3f13",
+    "created_at": "2026-08-26T10:33:00+00:00",
+    "expected_root_cause": "risky",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 63,
+    "razorpay_payment_id": "pay_synth_0063_f083d3",
+    "amount": 6712.26,
+    "currency": "INR",
+    "failure_reason_raw": "Customer account does not have sufficient balance for this charge.",
+    "failure_reason_code": "BAD_REQUEST_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_629",
+    "order_id": "order_synth_0063_5f4307",
+    "created_at": "2026-08-27T04:16:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "high",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 6712.26,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 6712.26,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 1,
+    "razorpay_payment_id": "pay_synth_0001_e0b39f",
+    "amount": 818.09,
+    "currency": "INR",
+    "failure_reason_raw": "Issuer returned do not honor status code 05.",
+    "failure_reason_code": "GATEWAY_ERROR_DO_NOT_HONOR",
+    "customer_id": "cust_synth_754",
+    "order_id": "order_synth_0001_c3e4c0",
+    "created_at": "2026-08-26T08:17:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 818.09,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 818.09,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 114,
+    "razorpay_payment_id": "pay_synth_0114_fad215",
+    "amount": 4410.32,
+    "currency": "INR",
+    "failure_reason_raw": "The card number provided is invalid or inactive.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_CARD_INVALID",
+    "customer_id": "cust_synth_912",
+    "order_id": "order_synth_0114_7eed30",
+    "created_at": "2026-08-29T22:39:00+00:00",
+    "expected_root_cause": "hard_decline",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 129,
+    "razorpay_payment_id": "pay_synth_0129_5d2596",
+    "amount": 960.73,
+    "currency": "INR",
+    "failure_reason_raw": "Transaction flagged by Razorpay Thirdwatch risk engine.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_RISK_CHECK_FAILED",
+    "customer_id": "cust_synth_107",
+    "order_id": "order_synth_0129_ef1a8e",
+    "created_at": "2026-08-29T01:53:00+00:00",
+    "expected_root_cause": "risky",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 128,
+    "razorpay_payment_id": "pay_synth_0128_ac7754",
+    "amount": 3107.21,
+    "currency": "INR",
+    "failure_reason_raw": "Card reported as lost or stolen by cardholder.",
+    "failure_reason_code": "GATEWAY_ERROR_CARD_STOLEN",
+    "customer_id": "cust_synth_794",
+    "order_id": "order_synth_0128_428cc9",
+    "created_at": "2026-08-27T16:57:00+00:00",
+    "expected_root_cause": "hard_decline",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 53,
+    "razorpay_payment_id": "pay_synth_0053_30abca",
+    "amount": 4626.81,
+    "currency": "INR",
+    "failure_reason_raw": "Customer account does not have sufficient balance for this charge.",
+    "failure_reason_code": "BAD_REQUEST_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_737",
+    "order_id": "order_synth_0053_60f121",
+    "created_at": "2026-08-31T09:19:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 4626.81,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 4626.81,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 72,
+    "razorpay_payment_id": "pay_synth_0072_850691",
+    "amount": 793.87,
+    "currency": "INR",
+    "failure_reason_raw": "Customer account does not have sufficient balance for this charge.",
+    "failure_reason_code": "BAD_REQUEST_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_133",
+    "order_id": "order_synth_0072_ebde88",
+    "created_at": "2026-08-30T14:46:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 793.87,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 793.87,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 85,
+    "razorpay_payment_id": "pay_synth_0085_e5fdc8",
+    "amount": 2380.15,
+    "currency": "INR",
+    "failure_reason_raw": "Customer account does not have sufficient balance for this charge.",
+    "failure_reason_code": "BAD_REQUEST_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_557",
+    "order_id": "order_synth_0085_1e2246",
+    "created_at": "2026-08-27T21:01:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 2380.15,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 2380.15,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 2380.15,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 77,
+    "razorpay_payment_id": "pay_synth_0077_f3bbfd",
+    "amount": 662.27,
+    "currency": "INR",
+    "failure_reason_raw": "Declined: not enough balance in account.",
+    "failure_reason_code": "GATEWAY_ERROR_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_874",
+    "order_id": "order_synth_0077_679435",
+    "created_at": "2026-08-29T17:33:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 662.27,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 662.27,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 3,
+    "razorpay_payment_id": "pay_synth_0003_819d86",
+    "amount": 1638.48,
+    "currency": "INR",
+    "failure_reason_raw": "Direct debit attempt failed at acquiring bank.",
+    "failure_reason_code": "GATEWAY_ERROR_DEBIT_FAILED",
+    "customer_id": "cust_synth_106",
+    "order_id": "order_synth_0003_f7dcd9",
+    "created_at": "2026-08-30T05:12:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 1638.48,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 1638.48,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 9,
+    "razorpay_payment_id": "pay_synth_0009_7380fc",
+    "amount": 471.64,
+    "currency": "INR",
+    "failure_reason_raw": "Customer 3D-Secure authentication failed or timed out.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_AUTH_FAILED",
+    "customer_id": "cust_synth_246",
+    "order_id": "order_synth_0009_60f918",
+    "created_at": "2026-08-25T17:33:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 471.64,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 141,
+    "razorpay_payment_id": "pay_synth_0141_ce8297",
+    "amount": 491.27,
+    "currency": "INR",
+    "failure_reason_raw": "Transaction flagged by Razorpay Thirdwatch risk engine.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_RISK_CHECK_FAILED",
+    "customer_id": "cust_synth_746",
+    "order_id": "order_synth_0141_05451b",
+    "created_at": "2026-08-31T02:31:00+00:00",
+    "expected_root_cause": "risky",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 98,
+    "razorpay_payment_id": "pay_synth_0098_407fe8",
+    "amount": 505.58,
+    "currency": "INR",
+    "failure_reason_raw": "Issuing bank switch is currently unavailable/down.",
+    "failure_reason_code": "GATEWAY_ERROR_ISSUER_UNAVAILABLE",
+    "customer_id": "cust_synth_234",
+    "order_id": "order_synth_0098_1fdd18",
+    "created_at": "2026-08-29T18:04:00+00:00",
+    "expected_root_cause": "network_error",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 505.58,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 505.58,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 22,
+    "razorpay_payment_id": "pay_synth_0022_2710c0",
+    "amount": 1202.3,
+    "currency": "INR",
+    "failure_reason_raw": "Customer 3D-Secure authentication failed or timed out.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_AUTH_FAILED",
+    "customer_id": "cust_synth_976",
+    "order_id": "order_synth_0022_685db6",
+    "created_at": "2026-08-31T04:50:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 134,
+    "razorpay_payment_id": "pay_synth_0134_8cf4e8",
+    "amount": 2447.05,
+    "currency": "INR",
+    "failure_reason_raw": "High risk score detected: rapid successive attempts from foreign IP.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_POSSIBLE_FRAUD",
+    "customer_id": "cust_synth_951",
+    "order_id": "order_synth_0134_56dad4",
+    "created_at": "2026-08-29T22:23:00+00:00",
+    "expected_root_cause": "risky",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 46,
+    "razorpay_payment_id": "pay_synth_0046_07855c",
+    "amount": 969.58,
+    "currency": "INR",
+    "failure_reason_raw": "Customer 3D-Secure authentication failed or timed out.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_AUTH_FAILED",
+    "customer_id": "cust_synth_324",
+    "order_id": "order_synth_0046_7812a6",
+    "created_at": "2026-08-27T04:02:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 969.58,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 70,
+    "razorpay_payment_id": "pay_synth_0070_bf8d95",
+    "amount": 934.95,
+    "currency": "INR",
+    "failure_reason_raw": "Declined: not enough balance in account.",
+    "failure_reason_code": "GATEWAY_ERROR_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_635",
+    "order_id": "order_synth_0070_61a644",
+    "created_at": "2026-08-28T02:24:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 934.95,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 116,
+    "razorpay_payment_id": "pay_synth_0116_fe802f",
+    "amount": 18736.42,
+    "currency": "INR",
+    "failure_reason_raw": "Card is restricted or permanently blocked by issuer.",
+    "failure_reason_code": "GATEWAY_ERROR_CARD_RESTRICTED",
+    "customer_id": "cust_synth_483",
+    "order_id": "order_synth_0116_ca1d00",
+    "created_at": "2026-08-25T09:55:00+00:00",
+    "expected_root_cause": "hard_decline",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "high",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 81,
+    "razorpay_payment_id": "pay_synth_0081_2ab1bd",
+    "amount": 1956.95,
+    "currency": "INR",
+    "failure_reason_raw": "Payment failed due to insufficient funds in customer account.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_ACCOUNT_INSUFFICIENT_BALANCE",
+    "customer_id": "cust_synth_745",
+    "order_id": "order_synth_0081_ee1f14",
+    "created_at": "2026-08-30T18:34:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 2,
+    "razorpay_payment_id": "pay_synth_0002_03bfaa",
+    "amount": 652.75,
+    "currency": "INR",
+    "failure_reason_raw": "Payment was declined by the issuing bank.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_DECLINED_BY_BANK",
+    "customer_id": "cust_synth_195",
+    "order_id": "order_synth_0002_cd4b3f",
+    "created_at": "2026-08-25T15:16:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 652.75,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 652.75,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 15,
+    "razorpay_payment_id": "pay_synth_0015_53160d",
+    "amount": 1314.95,
+    "currency": "INR",
+    "failure_reason_raw": "Direct debit attempt failed at acquiring bank.",
+    "failure_reason_code": "GATEWAY_ERROR_DEBIT_FAILED",
+    "customer_id": "cust_synth_999",
+    "order_id": "order_synth_0015_5a12fb",
+    "created_at": "2026-08-24T18:11:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 24,
+    "razorpay_payment_id": "pay_synth_0024_23bd68",
+    "amount": 431.93,
+    "currency": "INR",
+    "failure_reason_raw": "Issuer returned do not honor status code 05.",
+    "failure_reason_code": "GATEWAY_ERROR_DO_NOT_HONOR",
+    "customer_id": "cust_synth_835",
+    "order_id": "order_synth_0024_9cb60e",
+    "created_at": "2026-08-26T12:26:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 6,
+    "razorpay_payment_id": "pay_synth_0006_6c2e7d",
+    "amount": 882.88,
+    "currency": "INR",
+    "failure_reason_raw": "Issuer returned do not honor status code 05.",
+    "failure_reason_code": "GATEWAY_ERROR_DO_NOT_HONOR",
+    "customer_id": "cust_synth_384",
+    "order_id": "order_synth_0006_ef37e0",
+    "created_at": "2026-08-29T14:43:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 882.88,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 882.88,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 149,
+    "razorpay_payment_id": "pay_synth_0149_c3ac3a",
+    "amount": 758.24,
+    "currency": "INR",
+    "failure_reason_raw": "Direct debit attempt failed at acquiring bank.",
+    "failure_reason_code": "GATEWAY_ERROR_DEBIT_FAILED",
+    "customer_id": "cust_synth_458",
+    "order_id": "order_synth_0149_32393d",
+    "created_at": "2026-08-26T09:41:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 758.24,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 758.24,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 115,
+    "razorpay_payment_id": "pay_synth_0115_e747b7",
+    "amount": 590.19,
+    "currency": "INR",
+    "failure_reason_raw": "The card expiry date is in the past.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_CARD_EXPIRED",
+    "customer_id": "cust_synth_947",
+    "order_id": "order_synth_0115_0353d9",
+    "created_at": "2026-08-28T14:44:00+00:00",
+    "expected_root_cause": "hard_decline",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 88,
+    "razorpay_payment_id": "pay_synth_0088_87b25e",
+    "amount": 6496.56,
+    "currency": "INR",
+    "failure_reason_raw": "Declined: not enough balance in account.",
+    "failure_reason_code": "GATEWAY_ERROR_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_770",
+    "order_id": "order_synth_0088_2bdc2c",
+    "created_at": "2026-08-25T23:19:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "high",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 103,
+    "razorpay_payment_id": "pay_synth_0103_e5976b",
+    "amount": 396.84,
+    "currency": "INR",
+    "failure_reason_raw": "Connection to bank gateway timed out after 30000ms.",
+    "failure_reason_code": "GATEWAY_ERROR_PAYMENT_TIMED_OUT",
+    "customer_id": "cust_synth_764",
+    "order_id": "order_synth_0103_2cc6be",
+    "created_at": "2026-08-28T08:54:00+00:00",
+    "expected_root_cause": "network_error",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 396.84,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 396.84,
+        "attempts_used": 1
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 396.84,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 51,
+    "razorpay_payment_id": "pay_synth_0051_eabc0b",
+    "amount": 571.99,
+    "currency": "INR",
+    "failure_reason_raw": "Declined: not enough balance in account.",
+    "failure_reason_code": "GATEWAY_ERROR_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_460",
+    "order_id": "order_synth_0051_640d49",
+    "created_at": "2026-08-25T18:09:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 571.99,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 571.99,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 91,
+    "razorpay_payment_id": "pay_synth_0091_5b41dd",
+    "amount": 856.3,
+    "currency": "INR",
+    "failure_reason_raw": "Declined: not enough balance in account.",
+    "failure_reason_code": "GATEWAY_ERROR_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_129",
+    "order_id": "order_synth_0091_4d2700",
+    "created_at": "2026-08-28T07:45:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 856.3,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 121,
+    "razorpay_payment_id": "pay_synth_0121_d66863",
+    "amount": 4897.21,
+    "currency": "INR",
+    "failure_reason_raw": "The card expiry date is in the past.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_CARD_EXPIRED",
+    "customer_id": "cust_synth_539",
+    "order_id": "order_synth_0121_77867f",
+    "created_at": "2026-08-25T13:43:00+00:00",
+    "expected_root_cause": "hard_decline",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 4,
+    "razorpay_payment_id": "pay_synth_0004_37ae81",
+    "amount": 329.42,
+    "currency": "INR",
+    "failure_reason_raw": "Direct debit attempt failed at acquiring bank.",
+    "failure_reason_code": "GATEWAY_ERROR_DEBIT_FAILED",
+    "customer_id": "cust_synth_718",
+    "order_id": "order_synth_0004_23ad54",
+    "created_at": "2026-08-28T09:25:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 329.42,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 45,
+    "razorpay_payment_id": "pay_synth_0045_83265c",
+    "amount": 2535.53,
+    "currency": "INR",
+    "failure_reason_raw": "Direct debit attempt failed at acquiring bank.",
+    "failure_reason_code": "GATEWAY_ERROR_DEBIT_FAILED",
+    "customer_id": "cust_synth_299",
+    "order_id": "order_synth_0045_495304",
+    "created_at": "2026-08-25T14:00:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 123,
+    "razorpay_payment_id": "pay_synth_0123_248f81",
+    "amount": 759.14,
+    "currency": "INR",
+    "failure_reason_raw": "The card expiry date is in the past.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_CARD_EXPIRED",
+    "customer_id": "cust_synth_990",
+    "order_id": "order_synth_0123_52d161",
+    "created_at": "2026-08-26T11:55:00+00:00",
+    "expected_root_cause": "hard_decline",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 29,
+    "razorpay_payment_id": "pay_synth_0029_bdfe43",
+    "amount": 409.42,
+    "currency": "INR",
+    "failure_reason_raw": "Customer 3D-Secure authentication failed or timed out.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_AUTH_FAILED",
+    "customer_id": "cust_synth_350",
+    "order_id": "order_synth_0029_f96448",
+    "created_at": "2026-08-26T15:27:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 142,
+    "razorpay_payment_id": "pay_synth_0142_d60793",
+    "amount": 557.12,
+    "currency": "INR",
+    "failure_reason_raw": "Payment channel undergoing scheduled maintenance window.",
+    "failure_reason_code": "PAYMENT_CHANNEL_CLOSED_MAINT",
+    "customer_id": "cust_synth_562",
+    "order_id": "order_synth_0142_c477c5",
+    "created_at": "2026-08-25T09:21:00+00:00",
+    "expected_root_cause": "unknown",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 56,
+    "razorpay_payment_id": "pay_synth_0056_84aebc",
+    "amount": 1871.64,
+    "currency": "INR",
+    "failure_reason_raw": "Customer account does not have sufficient balance for this charge.",
+    "failure_reason_code": "BAD_REQUEST_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_217",
+    "order_id": "order_synth_0056_8f9a23",
+    "created_at": "2026-08-29T06:22:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 1871.64,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 19,
+    "razorpay_payment_id": "pay_synth_0019_2218b4",
+    "amount": 16420.86,
+    "currency": "INR",
+    "failure_reason_raw": "Direct debit attempt failed at acquiring bank.",
+    "failure_reason_code": "GATEWAY_ERROR_DEBIT_FAILED",
+    "customer_id": "cust_synth_840",
+    "order_id": "order_synth_0019_a6f953",
+    "created_at": "2026-08-27T22:48:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "high",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 66,
+    "razorpay_payment_id": "pay_synth_0066_de554a",
+    "amount": 806.21,
+    "currency": "INR",
+    "failure_reason_raw": "Customer account does not have sufficient balance for this charge.",
+    "failure_reason_code": "BAD_REQUEST_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_856",
+    "order_id": "order_synth_0066_9390b7",
+    "created_at": "2026-08-31T05:42:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 806.21,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 806.21,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 806.21,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 118,
+    "razorpay_payment_id": "pay_synth_0118_013dea",
+    "amount": 2642.82,
+    "currency": "INR",
+    "failure_reason_raw": "Card is restricted or permanently blocked by issuer.",
+    "failure_reason_code": "GATEWAY_ERROR_CARD_RESTRICTED",
+    "customer_id": "cust_synth_437",
+    "order_id": "order_synth_0118_ef150d",
+    "created_at": "2026-08-26T10:42:00+00:00",
+    "expected_root_cause": "hard_decline",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 35,
+    "razorpay_payment_id": "pay_synth_0035_b2ca7f",
+    "amount": 4702.13,
+    "currency": "INR",
+    "failure_reason_raw": "Issuer returned do not honor status code 05.",
+    "failure_reason_code": "GATEWAY_ERROR_DO_NOT_HONOR",
+    "customer_id": "cust_synth_735",
+    "order_id": "order_synth_0035_9dd454",
+    "created_at": "2026-08-25T06:04:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 4702.13,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 120,
+    "razorpay_payment_id": "pay_synth_0120_61cbf2",
+    "amount": 688.39,
+    "currency": "INR",
+    "failure_reason_raw": "The card expiry date is in the past.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_CARD_EXPIRED",
+    "customer_id": "cust_synth_210",
+    "order_id": "order_synth_0120_a7b254",
+    "created_at": "2026-08-27T04:09:00+00:00",
+    "expected_root_cause": "hard_decline",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 11,
+    "razorpay_payment_id": "pay_synth_0011_527b4e",
+    "amount": 22215.59,
+    "currency": "INR",
+    "failure_reason_raw": "Payment was declined by the issuing bank.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_DECLINED_BY_BANK",
+    "customer_id": "cust_synth_357",
+    "order_id": "order_synth_0011_10a4a6",
+    "created_at": "2026-08-30T14:04:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "high",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 22215.59,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 22215.59,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 102,
+    "razorpay_payment_id": "pay_synth_0102_0a6206",
+    "amount": 2885.44,
+    "currency": "INR",
+    "failure_reason_raw": "Underlying network transport error while communicating with gateway.",
+    "failure_reason_code": "GATEWAY_ERROR_NETWORK_FAILURE",
+    "customer_id": "cust_synth_210",
+    "order_id": "order_synth_0102_ca45e1",
+    "created_at": "2026-08-29T15:56:00+00:00",
+    "expected_root_cause": "network_error",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 2885.44,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 2885.44,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 16,
+    "razorpay_payment_id": "pay_synth_0016_72dbab",
+    "amount": 683.86,
+    "currency": "INR",
+    "failure_reason_raw": "Transaction not permitted to cardholder by issuer.",
+    "failure_reason_code": "GATEWAY_ERROR_TRANSACTION_NOT_PERMITTED",
+    "customer_id": "cust_synth_775",
+    "order_id": "order_synth_0016_1a5de8",
+    "created_at": "2026-08-26T22:47:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 683.86,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 683.86,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 67,
+    "razorpay_payment_id": "pay_synth_0067_54e4bb",
+    "amount": 337.17,
+    "currency": "INR",
+    "failure_reason_raw": "Declined: not enough balance in account.",
+    "failure_reason_code": "GATEWAY_ERROR_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_380",
+    "order_id": "order_synth_0067_82a057",
+    "created_at": "2026-08-29T15:05:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 337.17,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 337.17,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 337.17,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 14,
+    "razorpay_payment_id": "pay_synth_0014_5083a7",
+    "amount": 377.31,
+    "currency": "INR",
+    "failure_reason_raw": "Transaction not permitted to cardholder by issuer.",
+    "failure_reason_code": "GATEWAY_ERROR_TRANSACTION_NOT_PERMITTED",
+    "customer_id": "cust_synth_431",
+    "order_id": "order_synth_0014_734ea9",
+    "created_at": "2026-08-25T02:45:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 71,
+    "razorpay_payment_id": "pay_synth_0071_9fe71b",
+    "amount": 2058.32,
+    "currency": "INR",
+    "failure_reason_raw": "Payment failed due to insufficient funds in customer account.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_ACCOUNT_INSUFFICIENT_BALANCE",
+    "customer_id": "cust_synth_312",
+    "order_id": "order_synth_0071_ba71b0",
+    "created_at": "2026-08-29T18:56:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 2058.32,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 2058.32,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 108,
+    "razorpay_payment_id": "pay_synth_0108_3127bd",
+    "amount": 841.06,
+    "currency": "INR",
+    "failure_reason_raw": "Connection to bank gateway timed out after 30000ms.",
+    "failure_reason_code": "GATEWAY_ERROR_PAYMENT_TIMED_OUT",
+    "customer_id": "cust_synth_990",
+    "order_id": "order_synth_0108_e7caf3",
+    "created_at": "2026-08-30T07:26:00+00:00",
+    "expected_root_cause": "network_error",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 841.06,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 841.06,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 62,
+    "razorpay_payment_id": "pay_synth_0062_248a0f",
+    "amount": 894.67,
+    "currency": "INR",
+    "failure_reason_raw": "Payment failed due to insufficient funds in customer account.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_ACCOUNT_INSUFFICIENT_BALANCE",
+    "customer_id": "cust_synth_444",
+    "order_id": "order_synth_0062_00327d",
+    "created_at": "2026-08-29T03:39:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 894.67,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 83,
+    "razorpay_payment_id": "pay_synth_0083_0c530d",
+    "amount": 684.89,
+    "currency": "INR",
+    "failure_reason_raw": "Declined: not enough balance in account.",
+    "failure_reason_code": "GATEWAY_ERROR_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_583",
+    "order_id": "order_synth_0083_993cc7",
+    "created_at": "2026-08-26T19:13:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 684.89,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 684.89,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 7,
+    "razorpay_payment_id": "pay_synth_0007_2837cc",
+    "amount": 1653.45,
+    "currency": "INR",
+    "failure_reason_raw": "Direct debit attempt failed at acquiring bank.",
+    "failure_reason_code": "GATEWAY_ERROR_DEBIT_FAILED",
+    "customer_id": "cust_synth_646",
+    "order_id": "order_synth_0007_e205bd",
+    "created_at": "2026-08-25T13:25:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 1653.45,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 33,
+    "razorpay_payment_id": "pay_synth_0033_cb7c7b",
+    "amount": 15911.81,
+    "currency": "INR",
+    "failure_reason_raw": "Transaction not permitted to cardholder by issuer.",
+    "failure_reason_code": "GATEWAY_ERROR_TRANSACTION_NOT_PERMITTED",
+    "customer_id": "cust_synth_807",
+    "order_id": "order_synth_0033_bf9f5b",
+    "created_at": "2026-08-29T22:52:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "high",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 18,
+    "razorpay_payment_id": "pay_synth_0018_96c26e",
+    "amount": 794.49,
+    "currency": "INR",
+    "failure_reason_raw": "Payment was declined by the issuing bank.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_DECLINED_BY_BANK",
+    "customer_id": "cust_synth_325",
+    "order_id": "order_synth_0018_cf9d5e",
+    "created_at": "2026-08-31T01:56:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 794.49,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 794.49,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 78,
+    "razorpay_payment_id": "pay_synth_0078_09ec9c",
+    "amount": 372.22,
+    "currency": "INR",
+    "failure_reason_raw": "Payment failed due to insufficient funds in customer account.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_ACCOUNT_INSUFFICIENT_BALANCE",
+    "customer_id": "cust_synth_441",
+    "order_id": "order_synth_0078_426963",
+    "created_at": "2026-08-25T20:42:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 372.22,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 143,
+    "razorpay_payment_id": "pay_synth_0143_5ae515",
+    "amount": 687.02,
+    "currency": "INR",
+    "failure_reason_raw": "Processor placed settlement hold type 41 on this transaction.",
+    "failure_reason_code": "PROCESSOR_SETTLEMENT_HOLD_41",
+    "customer_id": "cust_synth_493",
+    "order_id": "order_synth_0143_b80a53",
+    "created_at": "2026-08-30T21:02:00+00:00",
+    "expected_root_cause": "unknown",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 21,
+    "razorpay_payment_id": "pay_synth_0021_06e1d7",
+    "amount": 433.11,
+    "currency": "INR",
+    "failure_reason_raw": "Customer 3D-Secure authentication failed or timed out.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_AUTH_FAILED",
+    "customer_id": "cust_synth_982",
+    "order_id": "order_synth_0021_afcd75",
+    "created_at": "2026-08-28T06:43:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 433.11,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 54,
+    "razorpay_payment_id": "pay_synth_0054_f0f9e0",
+    "amount": 527.79,
+    "currency": "INR",
+    "failure_reason_raw": "Declined: not enough balance in account.",
+    "failure_reason_code": "GATEWAY_ERROR_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_435",
+    "order_id": "order_synth_0054_db0cb3",
+    "created_at": "2026-08-24T22:44:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 527.79,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 527.79,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 68,
+    "razorpay_payment_id": "pay_synth_0068_7d4db9",
+    "amount": 428.05,
+    "currency": "INR",
+    "failure_reason_raw": "Payment failed due to insufficient funds in customer account.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_ACCOUNT_INSUFFICIENT_BALANCE",
+    "customer_id": "cust_synth_590",
+    "order_id": "order_synth_0068_467ef3",
+    "created_at": "2026-08-24T20:53:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 428.05,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 428.05,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 65,
+    "razorpay_payment_id": "pay_synth_0065_4c8754",
+    "amount": 513.64,
+    "currency": "INR",
+    "failure_reason_raw": "Payment failed due to insufficient funds in customer account.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_ACCOUNT_INSUFFICIENT_BALANCE",
+    "customer_id": "cust_synth_819",
+    "order_id": "order_synth_0065_5c50d5",
+    "created_at": "2026-08-30T01:53:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 513.64,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 513.64,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 49,
+    "razorpay_payment_id": "pay_synth_0049_8408f7",
+    "amount": 677.11,
+    "currency": "INR",
+    "failure_reason_raw": "Issuer returned do not honor status code 05.",
+    "failure_reason_code": "GATEWAY_ERROR_DO_NOT_HONOR",
+    "customer_id": "cust_synth_443",
+    "order_id": "order_synth_0049_a6cb98",
+    "created_at": "2026-08-27T13:51:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 677.11,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 677.11,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 677.11,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 100,
+    "razorpay_payment_id": "pay_synth_0100_31211a",
+    "amount": 1902.23,
+    "currency": "INR",
+    "failure_reason_raw": "Issuing bank switch is currently unavailable/down.",
+    "failure_reason_code": "GATEWAY_ERROR_ISSUER_UNAVAILABLE",
+    "customer_id": "cust_synth_244",
+    "order_id": "order_synth_0100_63bb35",
+    "created_at": "2026-08-24T18:37:00+00:00",
+    "expected_root_cause": "network_error",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 122,
+    "razorpay_payment_id": "pay_synth_0122_42bfbf",
+    "amount": 790.89,
+    "currency": "INR",
+    "failure_reason_raw": "Card reported as lost or stolen by cardholder.",
+    "failure_reason_code": "GATEWAY_ERROR_CARD_STOLEN",
+    "customer_id": "cust_synth_129",
+    "order_id": "order_synth_0122_eef28b",
+    "created_at": "2026-08-29T11:49:00+00:00",
+    "expected_root_cause": "hard_decline",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 99,
+    "razorpay_payment_id": "pay_synth_0099_d073a2",
+    "amount": 938.83,
+    "currency": "INR",
+    "failure_reason_raw": "Issuing bank switch is currently unavailable/down.",
+    "failure_reason_code": "GATEWAY_ERROR_ISSUER_UNAVAILABLE",
+    "customer_id": "cust_synth_950",
+    "order_id": "order_synth_0099_20dc28",
+    "created_at": "2026-08-28T12:05:00+00:00",
+    "expected_root_cause": "network_error",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 938.83,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 938.83,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 60,
+    "razorpay_payment_id": "pay_synth_0060_0c3145",
+    "amount": 2741.51,
+    "currency": "INR",
+    "failure_reason_raw": "Customer account does not have sufficient balance for this charge.",
+    "failure_reason_code": "BAD_REQUEST_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_570",
+    "order_id": "order_synth_0060_801c63",
+    "created_at": "2026-08-26T03:21:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 2741.51,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 2741.51,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 124,
+    "razorpay_payment_id": "pay_synth_0124_ec6e62",
+    "amount": 2504.4,
+    "currency": "INR",
+    "failure_reason_raw": "Card is restricted or permanently blocked by issuer.",
+    "failure_reason_code": "GATEWAY_ERROR_CARD_RESTRICTED",
+    "customer_id": "cust_synth_864",
+    "order_id": "order_synth_0124_c91822",
+    "created_at": "2026-08-29T02:14:00+00:00",
+    "expected_root_cause": "hard_decline",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 74,
+    "razorpay_payment_id": "pay_synth_0074_9dc1b9",
+    "amount": 823.27,
+    "currency": "INR",
+    "failure_reason_raw": "Customer account does not have sufficient balance for this charge.",
+    "failure_reason_code": "BAD_REQUEST_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_911",
+    "order_id": "order_synth_0074_68f685",
+    "created_at": "2026-08-28T08:31:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 823.27,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 127,
+    "razorpay_payment_id": "pay_synth_0127_331cfb",
+    "amount": 827.46,
+    "currency": "INR",
+    "failure_reason_raw": "The card expiry date is in the past.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_CARD_EXPIRED",
+    "customer_id": "cust_synth_524",
+    "order_id": "order_synth_0127_2377a6",
+    "created_at": "2026-08-31T02:17:00+00:00",
+    "expected_root_cause": "hard_decline",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 48,
+    "razorpay_payment_id": "pay_synth_0048_1983bc",
+    "amount": 825.24,
+    "currency": "INR",
+    "failure_reason_raw": "Transaction not permitted to cardholder by issuer.",
+    "failure_reason_code": "GATEWAY_ERROR_TRANSACTION_NOT_PERMITTED",
+    "customer_id": "cust_synth_586",
+    "order_id": "order_synth_0048_69144b",
+    "created_at": "2026-08-26T20:20:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 825.24,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 25,
+    "razorpay_payment_id": "pay_synth_0025_e002b6",
+    "amount": 707.92,
+    "currency": "INR",
+    "failure_reason_raw": "Customer 3D-Secure authentication failed or timed out.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_AUTH_FAILED",
+    "customer_id": "cust_synth_421",
+    "order_id": "order_synth_0025_4ca04e",
+    "created_at": "2026-08-27T06:57:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 707.92,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 707.92,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 707.92,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 107,
+    "razorpay_payment_id": "pay_synth_0107_56e90c",
+    "amount": 532.46,
+    "currency": "INR",
+    "failure_reason_raw": "Payment processing session timed out during authorization.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_TIMED_OUT",
+    "customer_id": "cust_synth_121",
+    "order_id": "order_synth_0107_e0db2c",
+    "created_at": "2026-08-30T09:07:00+00:00",
+    "expected_root_cause": "network_error",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 532.46,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 532.46,
+        "attempts_used": 1
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 532.46,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 61,
+    "razorpay_payment_id": "pay_synth_0061_704b23",
+    "amount": 2288.9,
+    "currency": "INR",
+    "failure_reason_raw": "Payment failed due to insufficient funds in customer account.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_ACCOUNT_INSUFFICIENT_BALANCE",
+    "customer_id": "cust_synth_848",
+    "order_id": "order_synth_0061_64d02f",
+    "created_at": "2026-08-31T03:04:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 2288.9,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 2288.9,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 119,
+    "razorpay_payment_id": "pay_synth_0119_424345",
+    "amount": 371.52,
+    "currency": "INR",
+    "failure_reason_raw": "The card number provided is invalid or inactive.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_CARD_INVALID",
+    "customer_id": "cust_synth_714",
+    "order_id": "order_synth_0119_11e84a",
+    "created_at": "2026-08-28T04:06:00+00:00",
+    "expected_root_cause": "hard_decline",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 104,
+    "razorpay_payment_id": "pay_synth_0104_59e361",
+    "amount": 3971.82,
+    "currency": "INR",
+    "failure_reason_raw": "Issuing bank switch is currently unavailable/down.",
+    "failure_reason_code": "GATEWAY_ERROR_ISSUER_UNAVAILABLE",
+    "customer_id": "cust_synth_479",
+    "order_id": "order_synth_0104_25c3d6",
+    "created_at": "2026-08-26T07:04:00+00:00",
+    "expected_root_cause": "network_error",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 3971.82,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 3971.82,
+        "attempts_used": 1
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 3971.82,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 140,
+    "razorpay_payment_id": "pay_synth_0140_65f76a",
+    "amount": 978.68,
+    "currency": "INR",
+    "failure_reason_raw": "High risk score detected: rapid successive attempts from foreign IP.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_POSSIBLE_FRAUD",
+    "customer_id": "cust_synth_739",
+    "order_id": "order_synth_0140_bccf19",
+    "created_at": "2026-08-30T20:32:00+00:00",
+    "expected_root_cause": "risky",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 150,
+    "razorpay_payment_id": "pay_synth_0150_050713",
+    "amount": 3954.36,
+    "currency": "INR",
+    "failure_reason_raw": "Generic gateway response: customer 3d-secure authentication failed or timed out.",
+    "failure_reason_code": "GATEWAY_ERROR",
+    "customer_id": "cust_synth_819",
+    "order_id": "order_synth_0150_18b90a",
+    "created_at": "2026-08-25T22:28:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 3954.36,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 3954.36,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 69,
+    "razorpay_payment_id": "pay_synth_0069_ac6acd",
+    "amount": 866.8,
+    "currency": "INR",
+    "failure_reason_raw": "Generic gateway response: declined: not enough balance in account.",
+    "failure_reason_code": "GATEWAY_ERROR",
+    "customer_id": "cust_synth_154",
+    "order_id": "order_synth_0069_cc0ff4",
+    "created_at": "2026-08-30T08:25:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 866.8,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 30,
+    "razorpay_payment_id": "pay_synth_0030_0fab94",
+    "amount": 4726.09,
+    "currency": "INR",
+    "failure_reason_raw": "Payment was declined by the issuing bank.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_DECLINED_BY_BANK",
+    "customer_id": "cust_synth_936",
+    "order_id": "order_synth_0030_960677",
+    "created_at": "2026-08-30T03:53:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 4726.09,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 4726.09,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 148,
+    "razorpay_payment_id": "pay_synth_0148_eacfe6",
+    "amount": 895.1,
+    "currency": "INR",
+    "failure_reason_raw": "Gateway returned undocumented status code X3 for auth request.",
+    "failure_reason_code": "GATEWAY_UNDOCUMENTED_STATUS_X3",
+    "customer_id": "cust_synth_390",
+    "order_id": "order_synth_0148_da2aba",
+    "created_at": "2026-08-29T09:23:00+00:00",
+    "expected_root_cause": "unknown",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 101,
+    "razorpay_payment_id": "pay_synth_0101_1e623f",
+    "amount": 674.6,
+    "currency": "INR",
+    "failure_reason_raw": "Issuing bank switch is currently unavailable/down.",
+    "failure_reason_code": "GATEWAY_ERROR_ISSUER_UNAVAILABLE",
+    "customer_id": "cust_synth_504",
+    "order_id": "order_synth_0101_776727",
+    "created_at": "2026-08-25T14:44:00+00:00",
+    "expected_root_cause": "network_error",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 674.6,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 674.6,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 96,
+    "razorpay_payment_id": "pay_synth_0096_8b4b9a",
+    "amount": 4610.84,
+    "currency": "INR",
+    "failure_reason_raw": "Payment processing session timed out during authorization.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_TIMED_OUT",
+    "customer_id": "cust_synth_608",
+    "order_id": "order_synth_0096_f346d9",
+    "created_at": "2026-08-29T04:20:00+00:00",
+    "expected_root_cause": "network_error",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 4610.84,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 4610.84,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "dev"
+  },
+  {
+    "id": 136,
+    "razorpay_payment_id": "pay_synth_0136_193918",
+    "amount": 742.26,
+    "currency": "INR",
+    "failure_reason_raw": "Issuer fraud detection rule triggered for this merchant.",
+    "failure_reason_code": "GATEWAY_ERROR_FRAUD_SUSPECTED",
+    "customer_id": "cust_synth_272",
+    "order_id": "order_synth_0136_24b6f9",
+    "created_at": "2026-08-25T00:38:00+00:00",
+    "expected_root_cause": "risky",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "validation"
+  },
+  {
+    "id": 37,
+    "razorpay_payment_id": "pay_synth_0037_f53e72",
+    "amount": 873.38,
+    "currency": "INR",
+    "failure_reason_raw": "Issuer returned do not honor status code 05.",
+    "failure_reason_code": "GATEWAY_ERROR_DO_NOT_HONOR",
+    "customer_id": "cust_synth_571",
+    "order_id": "order_synth_0037_4dc2c3",
+    "created_at": "2026-08-26T05:35:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 873.38,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "validation"
+  },
+  {
+    "id": 79,
+    "razorpay_payment_id": "pay_synth_0079_56cf59",
+    "amount": 525.29,
+    "currency": "INR",
+    "failure_reason_raw": "Declined: not enough balance in account.",
+    "failure_reason_code": "GATEWAY_ERROR_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_190",
+    "order_id": "order_synth_0079_2c58c0",
+    "created_at": "2026-08-25T11:18:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 525.29,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 525.29,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "validation"
+  },
+  {
+    "id": 57,
+    "razorpay_payment_id": "pay_synth_0057_a03e6b",
+    "amount": 316.97,
+    "currency": "INR",
+    "failure_reason_raw": "Declined: not enough balance in account.",
+    "failure_reason_code": "GATEWAY_ERROR_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_418",
+    "order_id": "order_synth_0057_b98e52",
+    "created_at": "2026-08-27T23:15:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 316.97,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "validation"
+  },
+  {
+    "id": 31,
+    "razorpay_payment_id": "pay_synth_0031_f4fd03",
+    "amount": 1814.19,
+    "currency": "INR",
+    "failure_reason_raw": "Transaction not permitted to cardholder by issuer.",
+    "failure_reason_code": "GATEWAY_ERROR_TRANSACTION_NOT_PERMITTED",
+    "customer_id": "cust_synth_315",
+    "order_id": "order_synth_0031_f326de",
+    "created_at": "2026-08-29T10:55:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 1814.19,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 1814.19,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "validation"
+  },
+  {
+    "id": 93,
+    "razorpay_payment_id": "pay_synth_0093_adf863",
+    "amount": 14305.07,
+    "currency": "INR",
+    "failure_reason_raw": "Underlying network transport error while communicating with gateway.",
+    "failure_reason_code": "GATEWAY_ERROR_NETWORK_FAILURE",
+    "customer_id": "cust_synth_109",
+    "order_id": "order_synth_0093_914aa2",
+    "created_at": "2026-08-30T09:32:00+00:00",
+    "expected_root_cause": "network_error",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "high",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 14305.07,
+        "attempts_used": 1
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 14305.07,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "validation"
+  },
+  {
+    "id": 138,
+    "razorpay_payment_id": "pay_synth_0138_23065e",
+    "amount": 4040.1,
+    "currency": "INR",
+    "failure_reason_raw": "Issuer fraud detection rule triggered for this merchant.",
+    "failure_reason_code": "GATEWAY_ERROR_FRAUD_SUSPECTED",
+    "customer_id": "cust_synth_277",
+    "order_id": "order_synth_0138_7d2cdc",
+    "created_at": "2026-08-24T15:29:00+00:00",
+    "expected_root_cause": "risky",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "validation"
+  },
+  {
+    "id": 94,
+    "razorpay_payment_id": "pay_synth_0094_b5bdd7",
+    "amount": 2826.89,
+    "currency": "INR",
+    "failure_reason_raw": "Underlying network transport error while communicating with gateway.",
+    "failure_reason_code": "GATEWAY_ERROR_NETWORK_FAILURE",
+    "customer_id": "cust_synth_534",
+    "order_id": "order_synth_0094_68164e",
+    "created_at": "2026-08-27T20:54:00+00:00",
+    "expected_root_cause": "network_error",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 2826.89,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 2826.89,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "validation"
+  },
+  {
+    "id": 106,
+    "razorpay_payment_id": "pay_synth_0106_17b647",
+    "amount": 577.7,
+    "currency": "INR",
+    "failure_reason_raw": "Payment processing session timed out during authorization.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_TIMED_OUT",
+    "customer_id": "cust_synth_760",
+    "order_id": "order_synth_0106_a004ce",
+    "created_at": "2026-08-24T21:55:00+00:00",
+    "expected_root_cause": "network_error",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 577.7,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 577.7,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "validation"
+  },
+  {
+    "id": 12,
+    "razorpay_payment_id": "pay_synth_0012_070db7",
+    "amount": 301.27,
+    "currency": "INR",
+    "failure_reason_raw": "Transaction not permitted to cardholder by issuer.",
+    "failure_reason_code": "GATEWAY_ERROR_TRANSACTION_NOT_PERMITTED",
+    "customer_id": "cust_synth_545",
+    "order_id": "order_synth_0012_75099e",
+    "created_at": "2026-08-25T06:28:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 301.27,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 301.27,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "validation"
+  },
+  {
+    "id": 113,
+    "razorpay_payment_id": "pay_synth_0113_39a914",
+    "amount": 717.17,
+    "currency": "INR",
+    "failure_reason_raw": "Card reported as lost or stolen by cardholder.",
+    "failure_reason_code": "GATEWAY_ERROR_CARD_STOLEN",
+    "customer_id": "cust_synth_432",
+    "order_id": "order_synth_0113_8750f1",
+    "created_at": "2026-08-26T22:54:00+00:00",
+    "expected_root_cause": "hard_decline",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "validation"
+  },
+  {
+    "id": 43,
+    "razorpay_payment_id": "pay_synth_0043_7328ac",
+    "amount": 3044.18,
+    "currency": "INR",
+    "failure_reason_raw": "Issuer returned do not honor status code 05.",
+    "failure_reason_code": "GATEWAY_ERROR_DO_NOT_HONOR",
+    "customer_id": "cust_synth_552",
+    "order_id": "order_synth_0043_fef290",
+    "created_at": "2026-08-28T19:18:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "validation"
+  },
+  {
+    "id": 47,
+    "razorpay_payment_id": "pay_synth_0047_0d3053",
+    "amount": 4799.21,
+    "currency": "INR",
+    "failure_reason_raw": "Direct debit attempt failed at acquiring bank.",
+    "failure_reason_code": "GATEWAY_ERROR_DEBIT_FAILED",
+    "customer_id": "cust_synth_672",
+    "order_id": "order_synth_0047_e44212",
+    "created_at": "2026-08-25T19:33:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 4799.21,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "validation"
+  },
+  {
+    "id": 42,
+    "razorpay_payment_id": "pay_synth_0042_cb957e",
+    "amount": 2203.5,
+    "currency": "INR",
+    "failure_reason_raw": "Customer 3D-Secure authentication failed or timed out.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_AUTH_FAILED",
+    "customer_id": "cust_synth_278",
+    "order_id": "order_synth_0042_f5b0d9",
+    "created_at": "2026-08-29T02:47:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 2203.5,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 2203.5,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "validation"
+  },
+  {
+    "id": 146,
+    "razorpay_payment_id": "pay_synth_0146_2cfcc6",
+    "amount": 3438.61,
+    "currency": "INR",
+    "failure_reason_raw": "Payment channel undergoing scheduled maintenance window.",
+    "failure_reason_code": "PAYMENT_CHANNEL_CLOSED_MAINT",
+    "customer_id": "cust_synth_549",
+    "order_id": "order_synth_0146_be8933",
+    "created_at": "2026-08-28T23:34:00+00:00",
+    "expected_root_cause": "unknown",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "validation"
+  },
+  {
+    "id": 97,
+    "razorpay_payment_id": "pay_synth_0097_6e39c0",
+    "amount": 4352.51,
+    "currency": "INR",
+    "failure_reason_raw": "Connection to bank gateway timed out after 30000ms.",
+    "failure_reason_code": "GATEWAY_ERROR_PAYMENT_TIMED_OUT",
+    "customer_id": "cust_synth_885",
+    "order_id": "order_synth_0097_980bd2",
+    "created_at": "2026-08-26T10:41:00+00:00",
+    "expected_root_cause": "network_error",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 4352.51,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 4352.51,
+        "attempts_used": 1
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 4352.51,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "held_out"
+  },
+  {
+    "id": 34,
+    "razorpay_payment_id": "pay_synth_0034_64d756",
+    "amount": 20922.45,
+    "currency": "INR",
+    "failure_reason_raw": "Payment was declined by the issuing bank.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_DECLINED_BY_BANK",
+    "customer_id": "cust_synth_473",
+    "order_id": "order_synth_0034_9f3edc",
+    "created_at": "2026-08-29T14:45:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "high",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 20922.45,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "held_out"
+  },
+  {
+    "id": 87,
+    "razorpay_payment_id": "pay_synth_0087_18e64e",
+    "amount": 974.75,
+    "currency": "INR",
+    "failure_reason_raw": "Declined: not enough balance in account.",
+    "failure_reason_code": "GATEWAY_ERROR_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_137",
+    "order_id": "order_synth_0087_e2132a",
+    "created_at": "2026-08-24T21:54:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 974.75,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 974.75,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "held_out"
+  },
+  {
+    "id": 10,
+    "razorpay_payment_id": "pay_synth_0010_275952",
+    "amount": 828.05,
+    "currency": "INR",
+    "failure_reason_raw": "Payment was declined by the issuing bank.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_DECLINED_BY_BANK",
+    "customer_id": "cust_synth_621",
+    "order_id": "order_synth_0010_1fd84d",
+    "created_at": "2026-08-29T14:33:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 828.05,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 828.05,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "held_out"
+  },
+  {
+    "id": 135,
+    "razorpay_payment_id": "pay_synth_0135_62c8b8",
+    "amount": 2582.67,
+    "currency": "INR",
+    "failure_reason_raw": "High risk score detected: rapid successive attempts from foreign IP.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_POSSIBLE_FRAUD",
+    "customer_id": "cust_synth_510",
+    "order_id": "order_synth_0135_3ca489",
+    "created_at": "2026-08-30T01:11:00+00:00",
+    "expected_root_cause": "risky",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "held_out"
+  },
+  {
+    "id": 139,
+    "razorpay_payment_id": "pay_synth_0139_8958ab",
+    "amount": 4038.75,
+    "currency": "INR",
+    "failure_reason_raw": "High risk score detected: rapid successive attempts from foreign IP.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_POSSIBLE_FRAUD",
+    "customer_id": "cust_synth_575",
+    "order_id": "order_synth_0139_9a33b9",
+    "created_at": "2026-08-26T15:20:00+00:00",
+    "expected_root_cause": "risky",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "held_out"
+  },
+  {
+    "id": 130,
+    "razorpay_payment_id": "pay_synth_0130_423a63",
+    "amount": 600.46,
+    "currency": "INR",
+    "failure_reason_raw": "Transaction flagged by Razorpay Thirdwatch risk engine.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_RISK_CHECK_FAILED",
+    "customer_id": "cust_synth_107",
+    "order_id": "order_synth_0130_cda15f",
+    "created_at": "2026-08-26T04:28:00+00:00",
+    "expected_root_cause": "risky",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "held_out"
+  },
+  {
+    "id": 26,
+    "razorpay_payment_id": "pay_synth_0026_bdbcc5",
+    "amount": 13075.51,
+    "currency": "INR",
+    "failure_reason_raw": "Customer 3D-Secure authentication failed or timed out.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_AUTH_FAILED",
+    "customer_id": "cust_synth_791",
+    "order_id": "order_synth_0026_8119b7",
+    "created_at": "2026-08-27T10:21:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "high",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "held_out"
+  },
+  {
+    "id": 76,
+    "razorpay_payment_id": "pay_synth_0076_8f78db",
+    "amount": 3300.22,
+    "currency": "INR",
+    "failure_reason_raw": "Payment failed due to insufficient funds in customer account.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_ACCOUNT_INSUFFICIENT_BALANCE",
+    "customer_id": "cust_synth_790",
+    "order_id": "order_synth_0076_6cb5ab",
+    "created_at": "2026-08-26T03:24:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "held_out"
+  },
+  {
+    "id": 20,
+    "razorpay_payment_id": "pay_synth_0020_63fb7c",
+    "amount": 595.51,
+    "currency": "INR",
+    "failure_reason_raw": "Direct debit attempt failed at acquiring bank.",
+    "failure_reason_code": "GATEWAY_ERROR_DEBIT_FAILED",
+    "customer_id": "cust_synth_774",
+    "order_id": "order_synth_0020_f1e268",
+    "created_at": "2026-08-30T14:19:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 595.51,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 595.51,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 595.51,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "held_out"
+  },
+  {
+    "id": 40,
+    "razorpay_payment_id": "pay_synth_0040_b83436",
+    "amount": 15769.04,
+    "currency": "INR",
+    "failure_reason_raw": "Issuer returned do not honor status code 05.",
+    "failure_reason_code": "GATEWAY_ERROR_DO_NOT_HONOR",
+    "customer_id": "cust_synth_632",
+    "order_id": "order_synth_0040_6c4152",
+    "created_at": "2026-08-30T14:02:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "high",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 15769.04,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "held_out"
+  },
+  {
+    "id": 36,
+    "razorpay_payment_id": "pay_synth_0036_42a715",
+    "amount": 4455.39,
+    "currency": "INR",
+    "failure_reason_raw": "Issuer returned do not honor status code 05.",
+    "failure_reason_code": "GATEWAY_ERROR_DO_NOT_HONOR",
+    "customer_id": "cust_synth_521",
+    "order_id": "order_synth_0036_6fa279",
+    "created_at": "2026-08-24T13:54:00+00:00",
+    "expected_root_cause": "soft_decline",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": true,
+        "amount_recovered": 4455.39,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 4455.39,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 4455.39,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "held_out"
+  },
+  {
+    "id": 58,
+    "razorpay_payment_id": "pay_synth_0058_ce6fc9",
+    "amount": 4400.32,
+    "currency": "INR",
+    "failure_reason_raw": "Customer account does not have sufficient balance for this charge.",
+    "failure_reason_code": "BAD_REQUEST_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_813",
+    "order_id": "order_synth_0058_511c30",
+    "created_at": "2026-08-24T17:10:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "held_out"
+  },
+  {
+    "id": 50,
+    "razorpay_payment_id": "pay_synth_0050_737dba",
+    "amount": 882.02,
+    "currency": "INR",
+    "failure_reason_raw": "Declined: not enough balance in account.",
+    "failure_reason_code": "GATEWAY_ERROR_INSUFFICIENT_FUNDS",
+    "customer_id": "cust_synth_525",
+    "order_id": "order_synth_0050_a3e95c",
+    "created_at": "2026-08-26T13:59:00+00:00",
+    "expected_root_cause": "insufficient_funds",
+    "is_genuinely_unrecoverable": false,
+    "customer_tier": "low",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": true,
+        "amount_recovered": 882.02,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": true,
+        "amount_recovered": 882.02,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "held_out"
+  },
+  {
+    "id": 125,
+    "razorpay_payment_id": "pay_synth_0125_c26c72",
+    "amount": 3269.81,
+    "currency": "INR",
+    "failure_reason_raw": "The card expiry date is in the past.",
+    "failure_reason_code": "BAD_REQUEST_PAYMENT_CARD_EXPIRED",
+    "customer_id": "cust_synth_432",
+    "order_id": "order_synth_0125_53cde6",
+    "created_at": "2026-08-30T06:12:00+00:00",
+    "expected_root_cause": "hard_decline",
+    "is_genuinely_unrecoverable": true,
+    "customer_tier": "mid",
+    "ground_truth_outcomes": {
+      "stop": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "escalate_human": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 0
+      },
+      "retry_now": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      },
+      "retry_later": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 2
+      },
+      "switch_method": {
+        "recovered": false,
+        "amount_recovered": 0.0,
+        "attempts_used": 1
+      }
+    },
+    "split_bucket": "held_out"
+  }
+]
