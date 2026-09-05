@@ -144,6 +144,18 @@ python eval/view_audit_trail.py pay_synth_0097_6e39c0
 python eval/view_audit_trail.py pay_synth_0097_6e39c0 --strategy C
 ```
 
+### Running the UI
+
+```powershell
+streamlit run streamlit_app.py
+```
+
+Opens a minimal presentation dashboard showing:
+1. **Evaluation Results**: Direct render of held-out comparison metrics and honest interpretation.
+2. **Lifecycle Trace Viewer**: Interactive 6-stage audit trail viewer across dev and held-out databases.
+3. **Safety Guardrail Demo**: Static walkthrough of the blocked hallucination case.
+
+
 ---
 
 ## Final Held-Out Results

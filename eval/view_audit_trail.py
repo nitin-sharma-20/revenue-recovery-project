@@ -158,6 +158,120 @@ def render_strategy_trace(strategy: str, decision: Decision | None, db):
         print(f"  Recorded At     : {fmt_ts(outcome.created_at)}")
 
 
+def fetch_trace_data(payment_id: str, db_path: Path) -> dict:
+    """
+    Fetches full structured lifecycle trace data for a given payment_id.
+    Reused directly by CLI and Streamlit presentation UI.
+    """
+    if not db_path.exists():
+        return {"error": f"Database not found at {db_path}"}
+
+    engine = create_engine(
+        f"sqlite:///{db_path}",
+        connect_args={"check_same_thread": False}
+    )
+    Session = sessionmaker(bind=engine)
+    db = Session()
+
+    try:
+        event = db.query(PaymentEvent).filter_by(razorpay_payment_id=payment_id).first()
+        if event is None:
+            return {"error": f"No PaymentEvent found with razorpay_payment_id='{payment_id}' in {db_path.name}"}
+
+        cls = db.query(RootCauseClassification).filter_by(event_id=event.id).first()
+
+        strategies = {}
+        for strategy in ["A", "B", "C"]:
+            decision = db.query(Decision).filter_by(
+                event_id=event.id, strategy=strategy
+            ).order_by(Decision.id.desc()).first()
+
+            if decision is None:
+                strategies[strategy] = None
+                continue
+
+            reasoning_raw = decision.reasoning or ""
+            if "]:" in reasoning_raw:
+                src_tag = reasoning_raw.split("]:")[0].strip("[")
+                reasoning_body = reasoning_raw.split("]:", 1)[1].strip()
+            else:
+                src_tag = "UNKNOWN"
+                reasoning_body = reasoning_raw
+
+            verdict = db.query(PolicyVerdict).filter_by(decision_id=decision.id).first()
+            actions = db.query(ActionTaken).filter_by(decision_id=decision.id).all()
+            outcome = db.query(Outcome).filter_by(event_id=decision.event_id, strategy=strategy).first()
+
+            strategies[strategy] = {
+                "decision_id": decision.id,
+                "recommended_action": decision.recommended_action,
+                "source": src_tag,
+                "reasoning": reasoning_body,
+                "decided_at": decision.created_at,
+                "verdict": {
+                    "allowed": verdict.allowed,
+                    "reason": verdict.reason,
+                    "rejection_rule": verdict.rejection_rule,
+                    "created_at": verdict.created_at
+                } if verdict else None,
+                "actions": [
+                    {
+                        "action_type": a.action_type,
+                        "idempotency_key": a.idempotency_key,
+                        "executed_at": a.executed_at,
+                        "razorpay_response": a.razorpay_response
+                    } for a in actions
+                ],
+                "outcome": {
+                    "recovered": outcome.recovered,
+                    "amount_recovered": outcome.amount_recovered,
+                    "attempts_used": outcome.attempts_used,
+                    "created_at": outcome.created_at
+                } if outcome else None
+            }
+
+        return {
+            "error": None,
+            "event": {
+                "id": event.id,
+                "razorpay_payment_id": event.razorpay_payment_id,
+                "amount": event.amount,
+                "currency": event.currency,
+                "customer_id": event.customer_id,
+                "order_id": event.order_id,
+                "created_at": event.created_at,
+                "split_bucket": event.split_bucket,
+                "failure_reason_code": event.failure_reason_code,
+                "failure_reason_raw": event.failure_reason_raw
+            },
+            "classification": {
+                "bucket": cls.bucket,
+                "classified_by": cls.classified_by,
+                "created_at": cls.created_at
+            } if cls else None,
+            "strategies": strategies
+        }
+    finally:
+        db.close()
+
+
+def get_all_payment_ids(db_path: Path) -> list[str]:
+    """Returns list of razorpay_payment_id strings available in db_path."""
+    if not db_path.exists():
+        return []
+    engine = create_engine(
+        f"sqlite:///{db_path}",
+        connect_args={"check_same_thread": False}
+    )
+    Session = sessionmaker(bind=engine)
+    db = Session()
+    try:
+        events = db.query(PaymentEvent.razorpay_payment_id).order_by(PaymentEvent.id).all()
+        return [e[0] for e in events]
+    finally:
+        db.close()
+
+
 def run(payment_id: str, strategy_filter: str | None, db_path: Path):
     if not db_path.exists():
         print(f"ERROR: Database not found at {db_path}")
@@ -210,6 +324,7 @@ def run(payment_id: str, strategy_filter: str | None, db_path: Path):
     print(f"  End of audit trail for {payment_id}")
     print(SEP)
     db.close()
+
 
 
 def main():
