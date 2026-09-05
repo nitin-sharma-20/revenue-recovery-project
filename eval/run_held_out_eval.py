@@ -2,20 +2,25 @@
 Final Phase 6 Evaluation Script.
 Runs Strategy A, B, and C on the held_out split exactly once.
 Generates eval/report.md containing metrics and the exception list.
+Also persists the full audit trail to eval/held_out.db so that any held-out
+payment can be viewed via:
+
+    python eval/view_audit_trail.py <payment_id> --db eval/held_out.db
 
 DATA INTEGRITY GUARANTEE:
   - Uses sqlite:///:memory: — a FRESH in-memory DB every run, so there can be
     NO stale Decision/Outcome rows from any prior execution.
   - After all strategies run, sanity_check_no_duplicate_decisions() asserts
     that every (event_id, strategy) pair has exactly ONE Decision row.
-    If duplicates are found (e.g. due to a future switch to a file DB) the
-    script aborts with exit code 2 before writing the report.
+    If duplicates are found the script aborts with exit code 2 before writing
+    the report or persisting to disk.
   - The module-level _DATASET_CACHE in generate_synthetic_data.py is explicitly
     cleared at startup to prevent any cross-run cache bleed if this module is
     imported more than once in the same process.
 """
 
 import json
+import sqlite3
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -25,6 +30,8 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import StaticPool
+
+HELD_OUT_DB_PATH = Path(__file__).parent / "held_out.db"
 
 from app.db import Base
 from app.models import PaymentEvent, Decision, PolicyVerdict, RootCauseClassification, Outcome
@@ -64,7 +71,8 @@ def load_held_out_events(session):
 def make_session():
     engine = create_engine("sqlite:///:memory:", connect_args={"check_same_thread": False}, poolclass=StaticPool)
     Base.metadata.create_all(bind=engine)
-    return sessionmaker(autocommit=False, autoflush=False, bind=engine)()
+    session = sessionmaker(autocommit=False, autoflush=False, bind=engine)()
+    return session, engine
 
 
 def get_exceptions(db, strategy: str):
@@ -216,6 +224,23 @@ def sanity_check_no_duplicate_decisions(db, events, strategies=("A", "B", "C")):
         print("         No stale or duplicate data detected. Report is clean.\n")
 
 
+def persist_to_file(mem_conn, file_path: Path):
+    """
+    Copy the in-memory SQLite database to a file on disk using SQLite's
+    built-in backup API.  This is the recommended, zero-loss approach —
+    it does a page-by-page copy at the SQLite layer, preserving every table,
+    row, and index exactly.
+
+    If held_out.db already exists it is overwritten (the eval is authoritative).
+    """
+    file_path.parent.mkdir(parents=True, exist_ok=True)
+    if file_path.exists():
+        file_path.unlink()  # Remove stale file so backup starts clean
+    disk_conn = sqlite3.connect(str(file_path))
+    mem_conn.backup(disk_conn)
+    disk_conn.close()
+
+
 def main():
     # Force UTF-8 output so currency symbols render on Windows terminals
     if hasattr(sys.stdout, "reconfigure"):
@@ -225,11 +250,12 @@ def main():
     print("Reclaim -- Phase 6 Held-Out Evaluation")
     print("DB: sqlite:///:memory: (fresh in-memory instance per run)")
     print("    => Zero stale rows possible by construction.")
+    print(f"    => Will persist to {HELD_OUT_DB_PATH} after sanity check.")
     print("=" * 70)
     print()
 
     print("Initialising fresh in-memory database...")
-    db = make_session()
+    db, engine = make_session()
 
     # Clear module-level dataset cache in case this script is imported or re-run
     # in the same process (e.g. during test harness execution). This prevents any
@@ -276,6 +302,20 @@ def main():
     # This assertion will abort with exit code 2 if duplicates exist,
     # preventing a corrupt report from being written.
     sanity_check_no_duplicate_decisions(db, events, strategies=("A", "B", "C"))
+
+    # === PERSIST in-memory DB to held_out.db ===
+    # Must happen AFTER the sanity check so we never persist a corrupt run.
+    # engine.raw_connection() is the SA 2.0 API for getting a raw DBAPI connection
+    # from the connection pool without going through the ORM Session.
+    print(f"Persisting audit trail to {HELD_OUT_DB_PATH} ...")
+    raw_conn = engine.raw_connection()
+    try:
+        persist_to_file(raw_conn, HELD_OUT_DB_PATH)
+    finally:
+        raw_conn.close()
+    print(f"  Done. View any held-out trace with:")
+    print(f"  python eval/view_audit_trail.py <payment_id> --db eval/held_out.db")
+    print()
 
     exc_a = get_exceptions(db, "A")
     exc_b = get_exceptions(db, "B")

@@ -25,7 +25,11 @@ __pycache__/
 ehthumbs.db
 Thumbs.db
 GEMINI.md
-requirements.md
-report.md
-synthesis.py
-test_google.py
+/requirements.md
+/report.md
+/synthesis.py
+/test_google.py
+/test_single_event.py
+*.db
+*.sqlite3
+!eval/report.md
