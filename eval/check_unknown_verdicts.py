@@ -1,4 +1,4 @@
-﻿"""
+"""
 Forensic check: For the 6 "unknown" bucket events where Strategy C LLM recommended
 retry_now or retry_later, confirm whether the Policy Engine blocked them.
 
@@ -71,7 +71,7 @@ def main():
     run_strategy_a(dev_events, db)
     print("Running Strategy B...")
     run_strategy_b(dev_events, db)
-    print("Running Strategy C (live LLM, ~120 Groq calls)...")
+    print("Running Strategy C (LLM + Policy Engine, ~15 unique API calls with caching)...")
     res_c = run_strategy_c(dev_events, db)
     print(f"Strategy C done. LLM={res_c['llm_decisions']} Fallback={res_c['fallback_decisions']}\n")
 

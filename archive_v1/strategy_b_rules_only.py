@@ -5,8 +5,10 @@ No LLM involved. All rules and policy checks are strictly deterministic.
 """
 
 import random
+from datetime import datetime, timezone, timedelta
 from typing import List, Dict, Any, Optional
 from sqlalchemy.orm import Session
+from app.policy_engine import PolicyEngine
 from app.models import PaymentEvent, Decision, PolicyVerdict, ActionTaken, Outcome
 from app.root_cause import (
     classify_failure_by_rule,
@@ -20,7 +22,7 @@ from app.root_cause import (
 )
 
 
-def map_root_cause_to_action(bucket: str) -> tuple[str, str]:
+def map_root_cause_to_action(bucket: str, previous_attempts: int = 0, amount: float = 0.0) -> tuple[str, str]:
     """
     Deterministic rule mapping from root-cause bucket to recommended action.
     Returns: (recommended_action, reasoning)
@@ -32,8 +34,12 @@ def map_root_cause_to_action(bucket: str) -> tuple[str, str]:
     elif bucket == NETWORK_ERROR:
         return "retry_now", "Rule: Transient network timeout/failure detected. Safe to retry immediately."
     elif bucket == INSUFFICIENT_FUNDS:
+        if amount > 10000.0 and previous_attempts >= 1:
+            return "switch_method", "Rule: High-ticket transaction with insufficient funds. Switch to alternate payment method."
         return "retry_later", "Rule: Account balance insufficient. Schedule delayed retry with exponential backoff for customer replenishment."
     elif bucket == SOFT_DECLINE:
+        if previous_attempts >= 2:
+            return "switch_method", "Rule: Repeated soft declines. Switch to alternate payment method."
         return "retry_later", "Rule: Temporary issuer decline. Schedule retry with backoff window."
     else:
         return "stop", f"Rule: Unrecognized bucket '{bucket}'. Default safe stop."
@@ -75,8 +81,12 @@ def run_strategy_b(events: List[PaymentEvent], db: Session) -> Dict[str, Any]:
         classification = classify_and_persist(event, db)
         bucket = classification.bucket
 
+        # Find attempts used so far
+        from app.executor import count_prior_retry_attempts
+        previous_attempts = count_prior_retry_attempts(event.id, "B", db)
+
         # 2. Deterministic Rule Recommendation
-        recommended_action, reasoning = map_root_cause_to_action(bucket)
+        recommended_action, reasoning = map_root_cause_to_action(bucket, previous_attempts, event.amount)
 
         decision = Decision(
             event_id=event.id,
@@ -88,21 +98,19 @@ def run_strategy_b(events: List[PaymentEvent], db: Session) -> Dict[str, Any]:
         db.flush()
 
         # 3. Policy Verdict (Deterministic Policy Check)
-        # Verify hard constraints: hard_decline, risky, and unknown cannot auto-retry
-        if bucket in [HARD_DECLINE, RISKY, UNKNOWN] and recommended_action in ["retry_now", "retry_later"]:
-            verdict_allowed = False
-            verdict_reason = f"Policy violation: Auto-retry prohibited for {bucket}"
-        else:
-            verdict_allowed = True
-            verdict_reason = f"Policy approved: Action '{recommended_action}' is valid for bucket '{bucket}'"
+        simulated_time = event.created_at
+        if simulated_time.tzinfo is None:
+            simulated_time = simulated_time.replace(tzinfo=timezone.utc)
+        simulated_time += timedelta(hours=1)
 
-        verdict = PolicyVerdict(
-            decision_id=decision.id,
-            allowed=verdict_allowed,
-            reason=verdict_reason
+        verdict = PolicyEngine.evaluate_and_record(
+            decision=decision,
+            root_cause_bucket=bucket,
+            event=event,
+            db=db,
+            current_time=simulated_time
         )
-        db.add(verdict)
-        db.flush()
+        verdict_allowed = verdict.allowed
 
         # 4. Action Taken (only if approved and not a pure no-op)
         if verdict_allowed and recommended_action != "stop":

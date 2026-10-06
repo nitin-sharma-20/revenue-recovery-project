@@ -1,8 +1,13 @@
 """
 Audit Trail and Policy Exception Reporting Helpers.
+
+v2 (Rebuild): adds classify_outcome_reason() as the canonical, single-definition
+function for outcome reason categorization (DESIGN_DECISIONS.md item 9).
+This function is the ONLY place this classification logic lives — the CI test
+in tests/test_import_boundary.py asserts exactly one definition exists.
+
 Reconstructs the full end-to-end trace of any payment event:
 Event -> Root Cause -> Decision -> Policy Verdict -> Action Taken -> Outcome.
-Also categorizes and surfaces policy exceptions (including 7-day age cutoff) for compliance and eval reports.
 """
 
 from typing import Dict, Any, List, Optional
@@ -10,6 +15,55 @@ from sqlalchemy.orm import Session
 
 from app.models import PaymentEvent, RootCauseClassification, Decision, PolicyVerdict, ActionTaken, Outcome
 from app.policy_engine import get_policy_rejections, get_age_cutoff_exceptions, RejectionRuleEnum
+
+
+def classify_outcome_reason(
+    outcome: "Outcome",
+    verdict: Optional["PolicyVerdict"],
+    event: "PaymentEvent",
+    root_cause_bucket: str,
+) -> str:
+    """
+    THE single, canonical function for classifying why an outcome has the result it has.
+
+    DESIGN_DECISIONS.md item 9: this is imported by eval/run_evaluation.py,
+    eval/view_audit_trail.py, and any report generator. There is NO second
+    implementation of this logic anywhere. The CI test in tests/test_import_boundary.py
+    enforces that exactly one definition exists.
+
+    Returns one of:
+      "recovered"             -- outcome.recovered is True
+      "instrument_ineligible" -- verdict blocked on INSTRUMENT_INELIGIBLE specifically
+      "policy_blocked"        -- verdict exists and allowed=False (any other rule)
+      "not_attempted_stop"    -- action was stop or escalate_human; no retry attempted
+      "attempted_and_failed"  -- verdict allowed, action taken, but not recovered
+    """
+    if outcome.recovered:
+        return "recovered"
+
+    if verdict is not None and not verdict.allowed:
+        if verdict.rejection_rule == RejectionRuleEnum.INSTRUMENT_INELIGIBLE.value:
+            return "instrument_ineligible"
+        return "policy_blocked"
+
+    # Verdict was allowed (or no verdict, e.g. baseline_a which skips policy check)
+    # Check if the action was a deliberate non-attempt
+    # We infer from the decision's recommended_action when no verdict exists
+    action = None
+    if verdict is not None and verdict.decision is not None:
+        action = verdict.decision.recommended_action
+    elif outcome.event is not None:
+        # Fall back: find the decision for this outcome's condition/run
+        # (outcome.event relationship must be loaded)
+        pass
+
+    if action in ("stop", "escalate_human"):
+        return "not_attempted_stop"
+
+    if outcome.attempts_used == 0:
+        return "not_attempted_stop"
+
+    return "attempted_and_failed"
 
 
 def get_event_audit_trail(event_id: int, db: Session) -> Optional[Dict[str, Any]]:

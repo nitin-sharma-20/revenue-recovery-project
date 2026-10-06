@@ -22,17 +22,16 @@ from app.models import Decision, ActionTaken, PaymentEvent
 from app.config import settings
 
 
-def generate_idempotency_key(event_id: int, strategy: str, attempt_number: int) -> str:
+def generate_idempotency_key(event_id: int, condition: str, run_id: str, attempt_number: int) -> str:
     """
-    Generates a deterministic, unique idempotency key from (event_id, strategy, attempt_number).
+    Generates a deterministic, unique idempotency key from (event_id, condition, run_id, attempt_number).
     Uses a hash to keep keys a consistent length while ensuring uniqueness.
     
-    The key format is: reclaim_{strategy}_{event_id}_{attempt_number}_{hash_suffix}
-    The hash suffix provides collision resistance if IDs are reused across DB resets.
+    The key format is: reclaim_{condition}_{event_id}_{attempt_number}_{hash_suffix}
     """
-    raw = f"reclaim_v1_{event_id}_{strategy}_{attempt_number}_{settings.RAZORPAY_KEY_ID}"
+    raw = f"reclaim_v2_{event_id}_{condition}_{run_id}_{attempt_number}_{settings.RAZORPAY_KEY_ID}"
     hash_suffix = hashlib.sha256(raw.encode()).hexdigest()[:12]
-    return f"reclaim_{strategy}_{event_id}_{attempt_number}_{hash_suffix}"
+    return f"reclaim_{condition}_{event_id}_{attempt_number}_{hash_suffix}"
 
 
 def execute_retry(
@@ -50,7 +49,7 @@ def execute_retry(
     - (False, existing_ActionTaken) if idempotency key already exists (duplicate blocked)
     """
     now = current_time or datetime.now(timezone.utc)
-    idempotency_key = generate_idempotency_key(event.id, decision.strategy, attempt_number)
+    idempotency_key = generate_idempotency_key(event.id, decision.condition, decision.run_id, attempt_number)
 
     # Idempotency check: if this key already exists, block the duplicate
     existing = db.query(ActionTaken).filter_by(idempotency_key=idempotency_key).first()
@@ -99,7 +98,7 @@ def execute_switch_method(
     not real integrations.
     """
     now = current_time or datetime.now(timezone.utc)
-    idempotency_key = generate_idempotency_key(event.id, decision.strategy, attempt_number)
+    idempotency_key = generate_idempotency_key(event.id, decision.condition, decision.run_id, attempt_number)
 
     existing = db.query(ActionTaken).filter_by(idempotency_key=idempotency_key).first()
     if existing:
@@ -145,7 +144,7 @@ def execute_escalate_human(
     or flag for manual review.
     """
     now = current_time or datetime.now(timezone.utc)
-    idempotency_key = generate_idempotency_key(event.id, decision.strategy, attempt_number)
+    idempotency_key = generate_idempotency_key(event.id, decision.condition, decision.run_id, attempt_number)
 
     existing = db.query(ActionTaken).filter_by(idempotency_key=idempotency_key).first()
     if existing:

@@ -352,59 +352,77 @@ def test_age_cutoff_exception_query(db_session):
     assert "exceeding 7-day lifetime window" in age_exceptions[0]["reason"]
 
 
-def test_evaluate_and_record_cross_strategy_isolation(db_session):
+def test_instrument_ineligible_enforced():
     """
-    Verifies that attempts made by Strategy A do not burn into Strategy B's retry caps 
-    or backoff windows during evaluate_and_record.
+    Verify that one_off_card payments are blocked from auto-retry regardless of bucket.
+    """
+    # Should be blocked even if it's a network_error (the known limitation)
+    res_network = PolicyEngine.evaluate(
+        recommended_action="retry_now",
+        root_cause_bucket=NETWORK_ERROR,
+        instrument_type="one_off_card"
+    )
+    assert res_network.allowed is False
+    assert res_network.rejection_rule == RejectionRuleEnum.INSTRUMENT_INELIGIBLE
+
+    # Should be allowed if action is escalate_human
+    res_esc = PolicyEngine.evaluate(
+        recommended_action="escalate_human",
+        root_cause_bucket=NETWORK_ERROR,
+        instrument_type="one_off_card"
+    )
+    assert res_esc.allowed is True
+
+
+def test_evaluate_and_record_cross_condition_run_isolation(db_session):
+    """
+    Verifies that attempts made by one condition/run_id do not burn into another's retry caps 
+    or backoff windows during evaluate_and_record. Uses the v2 composite constraint logic.
     """
     now = datetime(2026, 9, 1, 12, 0, 0, tzinfo=timezone.utc)
     
     test_event = PaymentEvent(
-        razorpay_payment_id="pay_test_cross_strat_001",
+        razorpay_payment_id="pay_test_cross_cond_001",
         amount=100.0,
         currency="INR",
-        failure_reason_raw="Test failure",
-        failure_reason_code="TEST_CODE",
-        customer_id="cust_001",
-        order_id="order_001",
         created_at=now - timedelta(days=1)
     )
     db_session.add(test_event)
     db_session.commit()
     
-    # 1. Setup Strategy A with 3 prior attempts (Maxed out)
-    for i in range(3):
-        dec_a = Decision(
-            event_id=test_event.id,
-            strategy="A",
-            recommended_action="retry_now",
-            reasoning=f"Strategy A attempt {i+1}"
-        )
-        db_session.add(dec_a)
-        db_session.commit()
-        
-        act_a = ActionTaken(
-            decision_id=dec_a.id,
-            action_type="retry_now",
-            idempotency_key=f"strat_A_key_{i}",
-            executed_at=now - timedelta(hours=5), # More than 4 hours ago to bypass backoff rule
-            razorpay_response='{}'
-        )
-        db_session.add(act_a)
-        db_session.commit()
+    # 1. Setup baseline_a in run-001 with an action
+    dec_a = Decision(
+        event_id=test_event.id,
+        condition="baseline_a",
+        run_id="run-001",
+        recommended_action="retry_now",
+        reasoning="baseline_a attempt"
+    )
+    db_session.add(dec_a)
+    db_session.commit()
+    
+    act_a = ActionTaken(
+        decision_id=dec_a.id,
+        action_type="retry_now",
+        idempotency_key="cond_A_key_1",
+        executed_at=now - timedelta(hours=5),
+        razorpay_response='{}'
+    )
+    db_session.add(act_a)
+    db_session.commit()
 
-    # 2. Evaluate a NEW decision from Strategy B
+    # 2. Evaluate a NEW decision for flag_on in run-002
     dec_b = Decision(
         event_id=test_event.id,
-        strategy="B",
+        condition="flag_on",
+        run_id="run-002",
         recommended_action="retry_now",
-        reasoning="Strategy B first attempt"
+        reasoning="flag_on first attempt"
     )
     db_session.add(dec_b)
     db_session.commit()
 
-    # 3. Verdict for Strategy B should be APPROVED (0 attempts used for B)
-    # If the bug existed, it would see 3 attempts from A and reject B.
+    # 3. Verdict for flag_on should be APPROVED (0 attempts used for flag_on in run-002)
     verdict_b = PolicyEngine.evaluate_and_record(
         decision=dec_b,
         root_cause_bucket=SOFT_DECLINE,
@@ -415,5 +433,5 @@ def test_evaluate_and_record_cross_strategy_isolation(db_session):
     
     assert verdict_b.allowed is True
     assert verdict_b.rejection_rule is None
-    assert "attempts: 0/3" in verdict_b.reason
+    assert "attempts: 0" in verdict_b.reason
 

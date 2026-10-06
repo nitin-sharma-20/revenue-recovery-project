@@ -119,7 +119,12 @@ def classify_failure_by_rule(
 def classify_and_persist(event: PaymentEvent, db: Session) -> RootCauseClassification:
     """
     Classifies a PaymentEvent and persists the classification to the database.
+    Idempotent: if a classification already exists for this event, returns it.
     """
+    existing = db.query(RootCauseClassification).filter_by(event_id=event.id).first()
+    if existing:
+        return existing
+
     bucket, classified_by, _ = classify_failure_by_rule(
         event.failure_reason_code,
         event.failure_reason_raw
@@ -134,3 +139,18 @@ def classify_and_persist(event: PaymentEvent, db: Session) -> RootCauseClassific
     db.commit()
     db.refresh(classification)
     return classification
+
+
+def get_event_bucket(event: PaymentEvent, db: Session) -> str:
+    """
+    Retrieves the bucket for a given payment event.
+    Asserts that exactly one classification exists.
+    """
+    classifications = db.query(RootCauseClassification).filter_by(event_id=event.id).all()
+    if len(classifications) > 1:
+        raise ValueError(f"Bug: Multiple classifications found for event {event.id}.")
+    
+    if len(classifications) == 1:
+        return classifications[0].bucket
+        
+    return UNKNOWN

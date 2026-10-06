@@ -4,7 +4,7 @@ LLM recommends an action + reasoning â†’ Policy Engine validates against rules â
 """
 
 from typing import List, Dict, Any, Optional
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from sqlalchemy.orm import Session
 
 from app.models import PaymentEvent, Decision, Outcome
@@ -42,9 +42,13 @@ def run_strategy_c(events: List[PaymentEvent], db: Session) -> Dict[str, Any]:
         "fallback_decisions": 0,
         "outcomes": []
     }
-    now = datetime.now(timezone.utc)
 
     for event in events:
+        simulated_time = event.created_at
+        if simulated_time.tzinfo is None:
+            simulated_time = simulated_time.replace(tzinfo=timezone.utc)
+        simulated_time += timedelta(hours=1)
+
         # 1. Root Cause Classification
         classification = classify_and_persist(event, db)
         bucket = classification.bucket
@@ -60,7 +64,7 @@ def run_strategy_c(events: List[PaymentEvent], db: Session) -> Dict[str, Any]:
             error_description=event.failure_reason_raw,
             previous_attempts=prior_attempts,
             created_at=event.created_at,
-            current_time=now
+            current_time=simulated_time
         )
         
         if source.startswith("llm"):
@@ -84,7 +88,7 @@ def run_strategy_c(events: List[PaymentEvent], db: Session) -> Dict[str, Any]:
             root_cause_bucket=bucket,
             event=event,
             db=db,
-            current_time=now
+            current_time=simulated_time
         )
 
         recovered, amount_recovered, attempts_used_for_outcome = False, 0.0, 0
@@ -100,7 +104,7 @@ def run_strategy_c(events: List[PaymentEvent], db: Session) -> Dict[str, Any]:
                 decision=decision,
                 attempt_number=attempt_number,
                 db=db,
-                current_time=now
+                current_time=simulated_time
             )
             
             if action_taken:

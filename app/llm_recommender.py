@@ -8,13 +8,15 @@ DOES NOT execute payments or make policy decisions.
 from datetime import datetime, timezone
 import json
 import os
-from typing import Optional
+import time
+from typing import Optional, Dict, Tuple
 from pydantic import BaseModel, Field
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import PydanticOutputParser
 
 from app.policy_engine import RecoveryActionEnum
 from app.config import settings
+
 
 
 class RecoveryRecommendation(BaseModel):
@@ -26,6 +28,16 @@ class RecoveryRecommendation(BaseModel):
         description="Clear, concise rationale explaining why this action was recommended for the failure."
     )
 
+
+# ── Response cache ──────────────────────────────────────────────────────────
+# Keyed on (root_cause_bucket, error_code, previous_attempts).
+# Many events share identical LLM inputs; caching avoids redundant API calls.
+# Module-level dict, reset on process restart — appropriate for batch eval.
+_llm_cache: Dict[Tuple[str, str, int], RecoveryRecommendation] = {}
+
+# Buckets where the Policy Engine *always* blocks auto-retry.
+# Calling the LLM for these is wasted spend — use heuristics directly.
+_SKIP_LLM_BUCKETS = frozenset({"hard_decline", "risky", "unknown"})
 
 SYSTEM_PROMPT = """You are Reclaim's expert AI payment recovery advisor.
 Your role is to analyze a failed payment event and recommend the most effective recovery intervention.
@@ -132,6 +144,35 @@ def recommend_action_heuristics(
     )
 
 
+def clear_llm_cache() -> None:
+    """Clear the in-memory LLM response cache (useful between eval runs)."""
+    _llm_cache.clear()
+
+
+_openai_chain = None
+_groq_chain = None
+
+def _get_openai_chain(api_key: str):
+    global _openai_chain
+    if _openai_chain is None:
+        from langchain_openai import ChatOpenAI
+        llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.0, api_key=api_key)
+        structured_llm = llm.with_structured_output(RecoveryRecommendation)
+        prompt = build_recommendation_prompt()
+        _openai_chain = prompt | structured_llm
+    return _openai_chain
+
+def _get_groq_chain(api_key: str):
+    global _groq_chain
+    if _groq_chain is None:
+        from langchain_groq import ChatGroq
+        llm = ChatGroq(model="qwen/qwen3.8-27b", temperature=0.0, groq_api_key=api_key, request_timeout=30)
+        structured_llm = llm.with_structured_output(RecoveryRecommendation)
+        prompt = build_recommendation_prompt()
+        _groq_chain = prompt | structured_llm
+    return _groq_chain
+
+
 def get_llm_recommendation(
     root_cause_bucket: str,
     amount: float,
@@ -144,6 +185,12 @@ def get_llm_recommendation(
     """
     Calls LangChain LLM with structured output schema to get an action recommendation.
     Falls back gracefully to intelligent deterministic recommender if API keys are missing.
+
+    Optimizations (to minimise API calls and latency):
+    1. Short-circuit: buckets the Policy Engine always blocks (hard_decline, risky,
+       unknown) go straight to the heuristic — no LLM call needed.
+    2. Cache: responses are cached by (bucket, error_code, previous_attempts).
+       Events sharing the same LLM-relevant inputs reuse a single API call.
     """
     now = current_time or datetime.now(timezone.utc)
     hours_since_failure = 0.0
@@ -154,76 +201,70 @@ def get_llm_recommendation(
             now = now.replace(tzinfo=timezone.utc)
         hours_since_failure = max(0.0, (now - created_at).total_seconds() / 3600.0)
 
+    # ── Optimisation 1: skip LLM for buckets the Policy Engine always blocks ──
+    bucket_lower = (root_cause_bucket or "").lower()
+    if bucket_lower in _SKIP_LLM_BUCKETS:
+        return recommend_action_heuristics(
+            root_cause_bucket=root_cause_bucket,
+            amount=amount,
+            error_code=error_code,
+            error_description=error_description,
+            previous_attempts=previous_attempts,
+            hours_since_failure=hours_since_failure
+        ), "heuristic (policy-blocked bucket)"
+
+    # ── Optimisation 2: check cache before making an API call ──
+    cache_key = (bucket_lower, (error_code or "UNKNOWN").strip().upper(), previous_attempts)
+    if cache_key in _llm_cache:
+        print(f"LLM cache hit for {cache_key}")
+        return _llm_cache[cache_key], "llm (cached)"
+
     # Check for API keys
     api_key_openai = os.environ.get("OPENAI_API_KEY") or settings.OPENAI_API_KEY
-    api_key_google = os.environ.get("GOOGLE_API_KEY") or settings.GOOGLE_API_KEY
     api_key_groq = os.environ.get("GROQ_API_KEY") or settings.GROQ_API_KEY
+
+    payload = {
+        "root_cause_bucket": root_cause_bucket,
+        "amount": amount,
+        "error_code": error_code or "UNKNOWN",
+        "error_description": error_description or "None",
+        "previous_attempts": previous_attempts,
+        "hours_since_failure": hours_since_failure
+    }
 
     # If LangChain model can be instantiated:
     if api_key_openai:
         try:
-            from langchain_openai import ChatOpenAI
-            llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.0, api_key=api_key_openai)
-            structured_llm = llm.with_structured_output(RecoveryRecommendation)
-            prompt = build_recommendation_prompt()
-            chain = prompt | structured_llm
-            result = chain.invoke({
-                "root_cause_bucket": root_cause_bucket,
-                "amount": amount,
-                "error_code": error_code or "UNKNOWN",
-                "error_description": error_description or "None",
-                "previous_attempts": previous_attempts,
-                "hours_since_failure": hours_since_failure
-            })
+            chain = _get_openai_chain(api_key_openai)
+            result = chain.invoke(payload)
             print("Served by OpenAI")
+            _llm_cache[cache_key] = result
             return result, "llm (openai)"
         except Exception as e:
-            pass
-
-    if api_key_google:
-        try:
-            from langchain_google_genai import ChatGoogleGenerativeAI
-            llm = ChatGoogleGenerativeAI(model="gemini-pro", temperature=0.0, google_api_key=api_key_google.strip())
-            structured_llm = llm.with_structured_output(RecoveryRecommendation)
-            prompt = build_recommendation_prompt()
-            chain = prompt | structured_llm
-            result = chain.invoke({
-                "root_cause_bucket": root_cause_bucket,
-                "amount": amount,
-                "error_code": error_code or "UNKNOWN",
-                "error_description": error_description or "None",
-                "previous_attempts": previous_attempts,
-                "hours_since_failure": hours_since_failure
-            })
-            print("Served by Google GenAI")
-            return result, "llm (google)"
-        except Exception as e:
-            print(f"Google GenAI error: {e}")
+            print(f"OpenAI error: {e}")
 
     if api_key_groq:
-        import time
         max_retries = 3
+        backoff_seconds = [10, 30, 60]
+        
         for attempt in range(max_retries):
             try:
-                from langchain_groq import ChatGroq
-                llm = ChatGroq(model="openai/gpt-oss-120b", temperature=0.0, groq_api_key=api_key_groq, request_timeout=30)
-                structured_llm = llm.with_structured_output(RecoveryRecommendation)
-                prompt = build_recommendation_prompt()
-                chain = prompt | structured_llm
-                result = chain.invoke({
-                    "root_cause_bucket": root_cause_bucket,
-                    "amount": amount,
-                    "error_code": error_code or "UNKNOWN",
-                    "error_description": error_description or "None",
-                    "previous_attempts": previous_attempts,
-                    "hours_since_failure": hours_since_failure
-                })
+                chain = _get_groq_chain(api_key_groq)
+                result = chain.invoke(payload)
                 print("Served by Groq")
+                _llm_cache[cache_key] = result
                 return result, "llm (groq)"
             except Exception as e:
-                if "429" in str(e) or "rate_limit" in str(e).lower():
-                    print(f"Groq Rate limit hit, sleeping for 45 seconds (Attempt {attempt+1}/{max_retries})")
-                    time.sleep(45)
+                is_rate_limit = False
+                if hasattr(e, 'status_code') and e.status_code == 429:
+                    is_rate_limit = True
+                elif "429" in str(e) or "rate_limit" in str(e).lower():
+                    is_rate_limit = True
+                    
+                if is_rate_limit and attempt < max_retries - 1:
+                    sleep_time = backoff_seconds[attempt]
+                    print(f"Groq Rate limit hit, sleeping for {sleep_time} seconds (Attempt {attempt+1}/{max_retries})")
+                    time.sleep(sleep_time)
                 else:
                     print(f"Groq error: {e}")
                     break

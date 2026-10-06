@@ -1,0 +1,3 @@
+# eval/runs/ — Per-run reproducibility JSON files.
+# One file per evaluation run: <run_id>.json
+# These survive database resets (DESIGN_DECISIONS.md item 14).

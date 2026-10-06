@@ -1,4 +1,4 @@
-﻿"""
+"""
 Standalone dev-split evaluation script.
 Runs Strategy A, B, and C on the dev split and produces:
   1. Side-by-side comparison table
@@ -179,7 +179,7 @@ def main():
     print(f"  Done. Recovered {res_b['recovered_count']}/{res_b['total_events']}.")
 
     print("\nRunning Strategy C (LLM + Policy Engine)...")
-    print("  Making Groq API calls for ~120 events (20s timeout each). This will take ~2-4 min...")
+    print("  LLM calls will be cached by (bucket, error_code, attempts) — expect ~15 unique API calls...")
     res_c = run_strategy_c(dev_events, db)
     print(f"  Done. Recovered {res_c['recovered_count']}/{res_c['total_events']}.")
     print(f"  LLM: {res_c['llm_decisions']}  |  Fallback: {res_c['fallback_decisions']}")

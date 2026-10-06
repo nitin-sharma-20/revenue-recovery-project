@@ -29,6 +29,11 @@ class RejectionRuleEnum(str, Enum):
     RETRY_CAP_EXCEEDED = "RETRY_CAP_EXCEEDED"
     BACKOFF_WINDOW_VIOLATED = "BACKOFF_WINDOW_VIOLATED"
     INVALID_ACTION = "INVALID_ACTION"
+    # v2: instrument-type eligibility check (DESIGN_DECISIONS.md item 3)
+    # Checked BEFORE retry-cap and backoff checks.
+    # KNOWN LIMITATION: this blocks network_error/one_off_card from automated retry
+    # even when the customer is still present in session. See DESIGN_DECISIONS.md item 3.
+    INSTRUMENT_INELIGIBLE = "INSTRUMENT_INELIGIBLE"
 
 
 ALLOWED_ACTION_VALUES = {action.value for action in RecoveryActionEnum}
@@ -60,7 +65,8 @@ class PolicyEngine:
         attempts_used: int = 0,
         last_attempt_at: Optional[datetime] = None,
         first_failed_at: Optional[datetime] = None,
-        current_time: Optional[datetime] = None
+        current_time: Optional[datetime] = None,
+        instrument_type: Optional[str] = None
     ) -> PolicyVerdictResult:
         """
         Evaluates a recommended action against all deterministic policy rules.
@@ -102,6 +108,17 @@ class PolicyEngine:
                     action=action_clean,
                     rejection_rule=RejectionRuleEnum.AGE_CUTOFF_EXCEEDED
                 )
+
+        # v2: Instrument Type Eligibility (DESIGN_DECISIONS.md item 3)
+        # KNOWN LIMITATION: This strictly blocks automated retries for 'one_off_card' even if the 
+        # bucket is 'network_error', whereas in reality, in-session network errors can often be retried.
+        if instrument_type == "one_off_card" and action_clean in [RecoveryActionEnum.RETRY_NOW.value, RecoveryActionEnum.RETRY_LATER.value]:
+            return PolicyVerdictResult(
+                allowed=False,
+                reason=f"Policy Violation: Automated retry ('{action_clean}') is prohibited for instrument type 'one_off_card'.",
+                action=action_clean,
+                rejection_rule=RejectionRuleEnum.INSTRUMENT_INELIGIBLE
+            )
 
         # Rule 2: Maximum 3 retry attempts per payment lifetime
         if action_clean in [RecoveryActionEnum.RETRY_NOW.value, RecoveryActionEnum.RETRY_LATER.value]:
@@ -148,10 +165,13 @@ class PolicyEngine:
         """
         Evaluates a Decision instance and persists the resulting PolicyVerdict to the database.
         """
-        # Count prior retry attempts from database
-        prior_actions = db.query(ActionTaken).filter_by(decision_id=decision.id).all()
-        # Also count all previous actions taken on this payment event for the current strategy
-        all_event_decisions = db.query(Decision).filter_by(event_id=event.id, strategy=decision.strategy).all()
+        # Count all previous actions taken on this payment event for the current condition AND run
+        # v2: uses composite constraint (event_id, condition, run_id)
+        all_event_decisions = db.query(Decision).filter_by(
+            event_id=event.id,
+            condition=decision.condition,
+            run_id=decision.run_id
+        ).all()
         decision_ids = [d.id for d in all_event_decisions]
         
         all_actions = []
@@ -170,7 +190,8 @@ class PolicyEngine:
             attempts_used=attempts_used,
             last_attempt_at=last_attempt,
             first_failed_at=event.created_at,
-            current_time=current_time
+            current_time=current_time,
+            instrument_type=event.instrument_type
         )
 
         verdict = PolicyVerdict(
